@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./venv/Scripts/python.exe src/fetch_filing.py)",
+      "Bash(./venv/Scripts/python.exe src/parse_schedule.py)",
+      "Bash(./venv/Scripts/python.exe src/rank_top_companies.py)",
+      "Bash(./venv/Scripts/python.exe src/extract_company_filing_data.py)",
+      "Bash(./venv/Scripts/python.exe src/scrape_company_website.py)",
+      "Bash(./venv/Scripts/python.exe src/finalize_execs.py)",
+      "Bash(python -c \"import json; d=json.load\\(open\\('inductivehealth_website.json',encoding='utf-8'\\)\\); print\\('leaders:', len\\(d.get\\('leadership',[]\\)\\)\\); print\\('pages:', len\\(d.get\\('pages',[]\\)\\)\\); [print\\('  page:',p['url'],'status',p['status_code']\\) for p in d.get\\('pages',[]\\)]\")",
+      "Bash(./venv/Scripts/python.exe -c \"import requests; r=requests.get\\('https://inductivehealth.com/', headers={'User-Agent':'Mozilla/5.0'}, timeout=15\\); print\\('status:', r.status_code, 'len:', len\\(r.text\\)\\)\")",
+      "Bash(./venv/Scripts/python.exe -c ' *)",
+      "Bash(./venv/Scripts/python.exe -c \"import json; d=json.load\\(open\\('data/inductivehealth_website.json',encoding='utf-8'\\)\\); print\\('leaders:', len\\(d.get\\('leadership',[]\\)\\)\\); [print\\(' ', l['name'],'—',l['title']\\) for l in d.get\\('leadership',[]\\)]\")",
+      "Bash(gh auth *)",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Users/user/AppData/Local/**)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" --version)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(winget install *)",
+      "PowerShell(Test-Path *)",
+      "Bash(/c/Program Files/GitHub CLI/bin/gh.exe auth *)",
+      "Bash(/c/Program Files/GitHub CLI/gh.exe auth *)",
+      "Bash(git -C C:/upwork/prospects/fdus-sample config --get user.name)",
+      "Bash(git -C C:/upwork/prospects/fdus-sample config --get user.email)",
+      "Bash(git config *)",
+      "Bash(git *)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" repo create fdus-portfolio-parser --public --source=. --description \"SEC EDGAR BDC 10-K Schedule of Investments parser — extracts, classifies, and validates portfolio data from FDUS filings.\" --push)",
+      "Bash(/c/Program Files/GitHub CLI/gh.exe repo *)",
+      "Bash(/c/Program Files/GitHub CLI/gh.exe api *)"
+    ]
+  }
+}
