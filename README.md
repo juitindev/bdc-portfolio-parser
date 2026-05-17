@@ -120,6 +120,42 @@ bdc-parse execs --target inductivehealth                    # rank executives
 
 Outputs land in `data/`, named after the ticker / target slug. Raw HTML is cached in `raw/` (gitignored).
 
+## Run with Docker
+
+Same pipeline, no local Python needed. The image bakes in the LLM extra so regex-first / LLM-fallback both work as soon as you supply an API key.
+
+**Build:**
+```bash
+docker compose build
+```
+
+**Configure `.env` first** (same as the native install — see [Configuration](#configuration)):
+```bash
+cp .env.example .env
+# edit .env: set EDGAR_IDENTITY=Your Name your@email.com
+# optionally set ANTHROPIC_API_KEY=...
+```
+
+`.env` is loaded by compose at runtime via `env_file`. Secrets are never baked into the image.
+
+**Run** — same subcommands as native, just prefixed:
+
+Regex-only run (no API key needed):
+```bash
+docker compose run --rm bdc-parse fetch FDUS
+docker compose run --rm bdc-parse schedule FDUS --no-llm
+docker compose run --rm bdc-parse rank FDUS
+```
+
+With LLM fallback active (requires `ANTHROPIC_API_KEY` in `.env`):
+```bash
+docker compose run --rm bdc-parse schedule FDUS
+```
+
+The compose service bind-mounts `./raw` and `./data` from the host, so fetched filings and pipeline outputs persist between container runs. `bdc-parse fetch FDUS` is still one-time per filing.
+
+> **Note:** `requirements.txt` just points at `pyproject.toml` (`-e .`). It exists for users who look for it; the actual dependency list lives in `pyproject.toml`.
+
 ## Adding a new BDC
 
 Create `src/bdc_parser/profiles/<ticker>.yaml`:

@@ -1,0 +1,37 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+.github
+
+# Local Python environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Scratch / temp / baselines from local validation
+tmp/
+*.baseline
+*.bak
+
+# Build / dist artifacts
+build/
+dist/
+*.egg-info/
+
+# Runtime state — bind-mounted at runtime instead of copied in
+raw/
+data/
+
+# Secrets — never bake into the image; come from env_file at runtime
+.env
+
+# OS / IDE noise
+.DS_Store
+.vscode/
+.idea/
+Thumbs.db

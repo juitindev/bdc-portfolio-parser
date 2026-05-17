@@ -1,0 +1,8 @@
+services:
+  bdc-parse:
+    build: .
+    image: bdc-portfolio-parser:latest
+    env_file: .env
+    volumes:
+      - ./raw:/app/raw
+      - ./data:/app/data
