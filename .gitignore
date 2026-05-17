@@ -1,6 +1,13 @@
 venv/
+.venv/
 __pycache__/
 *.pyc
 .env
 *.html
 raw/
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
