@@ -1,6 +1,6 @@
 # BDC Portfolio Parser
 
-[![CI](https://github.com/juitindev/fdus-portfolio-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/juitindev/fdus-portfolio-parser/actions/workflows/ci.yml)
+[![CI](https://github.com/juitindev/bdc-portfolio-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/juitindev/bdc-portfolio-parser/actions/workflows/ci.yml)
 
 Parse SEC EDGAR Business Development Company (BDC) 10-K filings into structured portfolio data. Lifts the Schedule of Investments out of HTML tables, ranks portfolio companies by aggregate fair value, and runs deep-dive extraction on a single company (filing mentions, website scrape, executive ranking).
 
