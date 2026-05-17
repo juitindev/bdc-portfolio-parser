@@ -1,242 +1,242 @@
-company_name,industry,investment_category,investment_type,rate_spread_floor,rate_cash_pik,investment_date,maturity_date,principal_amount,cost,fair_value
-"US GreenFiber, LLC",Building Products Manufacturing,Control,Common Equity,,,7/3/2014,,,586,
-"US GreenFiber, LLC",Building Products Manufacturing,Control,Common Equity,,,8/30/2019,,,1,
-"US GreenFiber, LLC",Building Products Manufacturing,Control,Common Equity,,,7/1/2020,,,1023,
-Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Subordinated Debt,,11.00%/0.00%,12/31/2021,12/31/2027,9602,9602,9602
-Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Common Equity,,,12/31/2021,,,5690,7183
-Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Common Equity,,,12/31/2021,,,7113,9702
-Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Common Equity,,,12/31/2021,,,,
-"CP Communications, LLC",Business Services,Affiliate,First Lien Debt,(S+8.50%) / (4.00%),12.50%/0.00%,12/4/2024,12/4/2029,5861,5825,5861
-"CP Communications, LLC",Business Services,Affiliate,Preferred Equity,,,12/4/2024,,,500,571
-"Medsurant Holdings, LLC",Healthcare Services,Affiliate,Preferred Equity,,,4/12/2011,,,,70
-"Medsurant Holdings, LLC",Healthcare Services,Affiliate,Warrant,,,4/12/2011,,,,238
-"Pfanstiehl, Inc.",Healthcare Products,Affiliate,Common Equity,,,3/29/2013,,,255,40995
-"PIPCO, LLC",Utilities: Services,Affiliate,First Lien Debt,(S+6.25%) / (2.00%),9.99%/0.00%,12/11/2025,12/11/2030,9000,8949,8949
-"PIPCO, LLC",Utilities: Services,Affiliate,Revolving Loan,(S+6.25%) / (2.00%),9.99%/0.00%,12/11/2025,12/11/2030,,-14,
-"PIPCO, LLC",Utilities: Services,Affiliate,Common Equity,,,12/11/2025,,,750,750
-"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,First Lien Debt,(S+6.00%) / (1.00%),9.93%/0.00%,2/12/2021,8/11/2027,28435,28372,28435
-"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,8/25/2021,,,1204,
-"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,12/16/2022,,,2609,
-"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,7/10/2023,,,686,
-"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,9/16/2022,,,472,
-"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,5/22/2024,,,2195,2762
-Steward Holding LLC (dba Steward Advanced Materials),Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,11/12/2015,,,1000,3897
-"2KDirect, Inc. (dba iPromote)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+8.00%) / (0.50%),12.13%/0.00%,6/25/2021,9/30/2027,6598,6590,6598
-"2KDirect, Inc. (dba iPromote)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+8.00%) / (0.50%),8.38%/0.00%,7/30/2021,9/30/2027,1846,1846,1846
-"2KDirect, Inc. (dba iPromote)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,6/25/2021,,,1000,
-301 Edison Holdings Inc. (dba LGG Industrial),Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,,11.75%/1.50%,11/14/2023,11/13/2028,11775,11681,11775
-301 Edison Holdings Inc. (dba LGG Industrial),Specialty Distribution,Non-control/Non-affiliate,Preferred Equity,,,11/14/2023,,,1000,1000
-"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,12.50%/1.25%,10/6/2021,3/31/2026,5744,5744,5744
-"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,12.50%/1.25%,10/6/2021,3/31/2026,13055,13050,13055
-"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,,12.50%/1.25%,10/6/2021,3/31/2026,1010,1010,1010
-"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,10/6/2021,,,371,
-"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Warrant,,,10/6/2021,,,253,
-"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,9/26/2022,,,88,
-"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,6/10/2025,,,375,998
-"Ad Info Parent, Inc. (dba MediaRadar)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (1.00%),8.67%/0.00%,11/1/2023,9/16/2029,15917,15847,15917
-"Ad Info Parent, Inc. (dba MediaRadar)",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+5.00%) / (1.00%),8.67%/0.00%,11/1/2023,9/16/2029,247,242,247
-"Ad Info Parent, Inc. (dba MediaRadar)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,11/1/2023,,,1249,1168
-"Air Burners, Inc.",Utility Equipment Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),8.74%/0.00%,12/8/2025,11/24/2030,6400,6325,6325
-"Air Burners, Inc.",Utility Equipment Manufacturing,Non-control/Non-affiliate,Common Equity,,,11/24/2025,,,800,799
-"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Second Lien Debt,,0.00%/15.00%,3/2/2020,9/30/2027,18622,17418,15826
-"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Common Equity,,,7/21/2017,,,637,
-"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Common Equity,,,11/24/2021,,,22,
-"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Common Equity,,,8/3/2023,,,45,
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,First Lien Debt,(S+6.75%) / (1.00%),10.68%/0.00%,6/28/2021,3/31/2028,22218,22192,21617
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,First Lien Debt,(S+6.75%) / (1.00%),8.18%/0.00%,6/28/2021,3/31/2028,330,330,330
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,First Lien Debt,,15.25%/0.00%,3/28/2024,3/31/2028,5864,5864,11997
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,5/31/2018,,,500,
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,8/6/2019,,,250,
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,11/2/2020,,,171,
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,12/29/2021,,,97,
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,11/27/2024,,,52,
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,12/30/2024,,,312,
-American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Common Equity,,,12/30/2024,,,,
-"AmeriWater, LLC",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+6.25%) / (1.00%),9.92%/0.00%,7/8/2022,7/8/2027,6998,6983,6998
-"AmeriWater, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,7/8/2022,,,1000,2223
-"AMOpportunities, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,12.50%/0.00%,3/12/2025,3/12/2029,10000,9957,10000
-"AMOpportunities, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,3/17/2025,,,801,852
-"AOM Intermediate Holdco, LLC (dba AllOver Media)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,2/1/2022,,,1372,1364
-"APM Intermediate Holdings, LLC (dba Artistic Paver Manufacturing, Inc.)",Building Products Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+7.00%) / (2.00%),10.99%/0.00%,11/8/2022,11/8/2027,18200,18159,18200
-"APM Intermediate Holdings, LLC (dba Artistic Paver Manufacturing, Inc.)",Building Products Manufacturing,Non-control/Non-affiliate,Subordinated Debt,,10.00%/5.00%,12/19/2025,2/8/2028,2505,2492,2492
-"APM Intermediate Holdings, LLC (dba Artistic Paver Manufacturing, Inc.)",Building Products Manufacturing,Non-control/Non-affiliate,Common Equity,,,11/8/2022,,,1200,1374
-Auto CRM LLC (dba Dealer Holdings),Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,0.00%/14.50%,10/1/2021,12/31/2028,907,906,907
-Auto CRM LLC (dba Dealer Holdings),Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,0.00%/14.50%,12/30/2024,12/31/2028,1993,1993,1993
-Auto CRM LLC (dba Dealer Holdings),Information Technology Services,Non-control/Non-affiliate,Common Equity,,,10/1/2021,,,500,
-Axis Medical Technologies LLC (dba MoveMedical),Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.00%),10.49%/0.00%,10/24/2024,10/24/2029,13600,13548,13600
-Axis Medical Technologies LLC (dba MoveMedical),Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+6.50%) / (2.00%),10.49%/0.00%,10/24/2024,10/24/2029,,-3,
-Axis Medical Technologies LLC (dba MoveMedical),Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,10/25/2024,,,1148,1258
-"Bad Boy Mowers JV Acquisition, LLC",Consumer Products,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (0.75%),8.94%/0.00%,12/12/2025,11/9/2029,9979,9930,9930
-"Bad Boy Mowers JV Acquisition, LLC",Consumer Products,Non-control/Non-affiliate,Preferred Equity,,,11/9/2023,,,1300,1605
-"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.99%/0.00%,11/27/2024,12/22/2029,31795,31777,29528
-"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),7.24%/0.00%,7/14/2025,12/22/2029,5,5,5
-"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,Common Equity,,,12/22/2023,,,12,
-"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,Preferred Equity,,,12/22/2023,,,2013,1380
-"BCM One Group Holdings, Inc.",Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,11.75%/0.00%,11/17/2021,11/17/2028,17667,17588,17667
-Bedford Precision Parts LLC,Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,3/12/2019,,,478,393
-"Bobcat of Connecticut, LLC",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.74%/0.00%,10/1/2025,10/1/2030,16000,15886,15886
-"Bobcat of Connecticut, LLC",Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,10/1/2025,,,1000,1000
-Brightmore Brands LLC,Retail,Non-control/Non-affiliate,First Lien Debt,(S+5.38%) / (1.50%),9.38%/0.00%,9/13/2022,9/9/2029,24000,23744,24000
-Brightmore Brands LLC,Retail,Non-control/Non-affiliate,Common Equity,,,9/13/2022,,,1000,1736
-Brightmore Brands LLC,Retail,Non-control/Non-affiliate,Common Equity,,,9/9/2024,,,713,714
-"Cardback Intermediate, LLC (dba Chargeback Gurus)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (0.75%),9.20%/0.00%,12/16/2025,12/16/2030,14663,14569,14569
-"Cardback Intermediate, LLC (dba Chargeback Gurus)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,8/10/2021,,,45,332
-"Cardback Intermediate, LLC (dba Chargeback Gurus)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,8/10/2021,,,45,190
-"Choice Technology Solutions, LLC (dba Choice Merchant Solutions, LLC)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,8/21/2023,,,,
-"CIH Intermediate, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,3/3/2022,,,400,3464
-"CIH Intermediate, LLC",Business Services,Non-control/Non-affiliate,Preferred Equity,,,3/3/2022,,,270,512
-Cleanova Topco Limited,Component Manufacturing,Non-control/Non-affiliate,Preferred Equity,,,6/12/2025,,,841,841
-Cleanova Topco Limited,Component Manufacturing,Non-control/Non-affiliate,Preferred Equity,,,6/12/2025,,,436,436
-Cleanova Topco Limited,Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,6/12/2025,,,454,454
-"CRS Solutions Holdings, LLC (dba CRS Texas)",Business Services,Non-control/Non-affiliate,Common Equity,,,6/28/2022,,,272,
-"CTM Group, Inc. (dba Venuplus, Inc.)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+6.75%) / (1.00%),10.57%/0.75%,2/28/2023,11/30/2026,7986,7946,7922
-"CTM Group, Inc. (dba Venuplus, Inc.)",Business Services,Non-control/Non-affiliate,Subordinated Debt,,11.50%/2.75%,2/28/2023,11/30/2027,2380,2370,2211
-"CTM Group, Inc. (dba Venuplus, Inc.)",Business Services,Non-control/Non-affiliate,Common Equity,,,2/28/2023,,,400,
-Customer Expressions Corp (dba Case IQ),Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (1.00%),8.82%/0.50%,1/6/2025,4/15/2029,15188,15101,15188
-Customer Expressions Corp (dba Case IQ),Information Technology Services,Non-control/Non-affiliate,Common Equity,,,1/6/2025,,,771,827
-"Dataguise, Inc.",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,12/31/2020,,,1500,1703
-"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (4.00%),9.75%/1.00%,7/21/2023,7/21/2026,13766,13748,13766
-"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,7.50%/7.50%,7/21/2023,1/21/2027,12511,12486,12511
-"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,7/21/2023,,,,
-"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,7/21/2023,,,1000,1033
-"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.25%),9.74%/2.50%,6/21/2023,6/21/2028,27712,27628,27712
-"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+8.25%) / (2.25%),12.24%/0.00%,7/12/2024,6/21/2028,,-3,
-"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,0.00%/14.00%,6/21/2023,6/21/2028,2848,2842,2848
-"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,6/21/2023,,,602,501
-Diversified Search LLC,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (1.00%),11.17%/0.00%,6/10/2019,12/23/2026,24155,24143,23623
-Diversified Search LLC,Business Services,Non-control/Non-affiliate,Common Equity,,,2/7/2019,,,551,88
-"Donovan Food Brokerage, LLC",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.67%/0.00%,2/23/2024,2/23/2029,24209,24113,24209
-"Donovan Food Brokerage, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,2/23/2024,,,728,1691
-"E-PlanSoft Buyer, LLC (dba e-PlanSoft)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,11.00%/2.00%,6/30/2025,6/30/2030,8082,8044,8082
-"E-PlanSoft Buyer, LLC (dba e-PlanSoft)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,6/27/2025,,,1500,1326
-"Enterprise Asset Management FM Purchaser, Inc. (dba MCIM)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.74%/2.00%,5/20/2024,5/20/2029,18572,18503,18572
-"Enterprise Asset Management FM Purchaser, Inc. (dba MCIM)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,5/20/2024,,,750,1010
-"Estex Manufacturing Company, LLC",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),8.87%/0.00%,10/1/2024,10/1/2029,5531,5486,5531
-"Estex Manufacturing Company, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,10/1/2024,,,750,566
-"Fishbowl Solutions, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (1.00%),11.97%/0.00%,3/25/2022,3/25/2027,22894,22836,22895
-"Fishbowl Solutions, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (1.00%),11.97%/0.00%,12/27/2024,3/25/2027,12168,12159,12168
-"Fishbowl Solutions, LLC",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+7.75%) / (1.00%),11.97%/0.00%,12/27/2024,3/25/2027,,,
-Fraser Steel LLC,Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.99%/0.00%,11/5/2025,2/5/2030,13800,13737,13800
-Fraser Steel LLC,Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,2/5/2025,,,500,549
-"Fumex, LLC",Industrial Product Services,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (1.00%),8.75%/0.00%,11/27/2024,11/27/2029,7000,6959,7000
-"Fumex, LLC",Industrial Product Services,Non-control/Non-affiliate,Common Equity,,,11/27/2024,,,350,346
-"Global Plasma Solutions, Inc.",Component Manufacturing,Non-control/Non-affiliate,Preferred Equity,,,2/1/2024,,,162,282
-"Global Plasma Solutions, Inc.",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,9/21/2018,,,188,199
-"GMP HVAC, LLC (dba McGee Heating & Air, LLC)",Utilities: Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.00%),10.37%/0.00%,12/8/2023,12/8/2028,29460,29246,29460
-"GMP HVAC, LLC (dba McGee Heating & Air, LLC)",Utilities: Services,Non-control/Non-affiliate,Preferred Equity,,,12/8/2023,,,1406,1890
-"GPS Insight, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.58%) / (1.00%),9.57%/0.00%,10/17/2025,5/18/2028,23201,23094,23094
-"Green Cubes Technology, LLC (dba Green Cubes)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (2.00%),11.46%/0.00%,10/16/2024,10/16/2029,22500,22289,22500
-"Haematologic Technologies, Inc.",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (3.00%),9.49%/3.00%,10/11/2019,6/30/2026,6579,6579,6381
-"Haematologic Technologies, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,10/11/2019,,,630,
-"Haematologic Technologies, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,6/26/2023,,,169,
-"Hallmark Health Care Solutions, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,9/18/2023,,,3646,1638
-"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Second Lien Debt,,11.50%/1.25%,4/25/2023,6/30/2028,25121,24947,25121
-"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Common Equity,,,3/23/2016,,,,1224
-"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Common Equity,,,8/7/2023,,,102,134
-"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Preferred Equity,,,10/16/2020,,,154,363
-"IBH Holdings, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,6/20/2018,,,,
-"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (2.00%),11.71%/0.50%,9/20/2024,9/20/2028,35065,34775,35065
-"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (2.00%),11.71%/0.50%,12/16/2025,9/20/2028,2993,2964,2994
-"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,Preferred Equity,,,9/20/2024,,,292,330
-"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,9/20/2024,,,,
-"Info Tech Operating, LLC (dba infotech)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+4.88%) / (2.00%),8.55%/0.00%,3/31/2025,3/31/2030,18000,17882,18000
-"Informatics Holdings, Inc. (dba Wasp Barcode Technologies)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.50%),10.49%/0.00%,5/1/2024,3/7/2029,9000,8989,9000
-"Informatics Holdings, Inc. (dba Wasp Barcode Technologies)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,3/7/2024,,,1000,504
-"ISI PSG Holdings, LLC (dba Incentive Solutions, Inc.)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (0.50%),11.32%/0.00%,4/5/2021,4/5/2026,9465,9460,9465
-"ISI PSG Holdings, LLC (dba Incentive Solutions, Inc.)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (0.50%),7.82%/0.00%,6/30/2021,4/5/2026,9813,9813,9809
-"ISI PSG Holdings, LLC (dba Incentive Solutions, Inc.)",Business Services,Non-control/Non-affiliate,Common Equity,,,4/5/2021,,,500,349
-"Janus Health Technologies, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,1/3/2024,,,1500,1020
-"Jumo Health, Inc.",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,8/16/2024,8/16/2029,5940,5888,5940
-"Jumo Health, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,8/16/2024,,,,
-"Jumo Health, Inc.",Healthcare Services,Non-control/Non-affiliate,Preferred Equity,,,8/16/2024,,,750,438
-"KG Lawn Care, Inc. (dba King Green)",Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.34%/0.00%,11/26/2025,11/26/2030,10000,9933,9945
-"KG Lawn Care, Inc. (dba King Green)",Consumer Services,Non-control/Non-affiliate,Common Equity,,,11/26/2025,,,616,616
-"The Kyjen Company, LLC (dba Outward Hound)",Consumer Products,Non-control/Non-affiliate,Common Equity,,,12/8/2017,,,933,
-"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (2.00%),9.24%/0.00%,4/15/2025,4/15/2030,9606,9565,9606
-"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,Revolving Loan,(S+5.25%) / (2.00%),9.24%/0.00%,4/15/2025,4/15/2030,573,558,573
-"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,4/15/2025,,,388,254
-"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,Preferred Equity,,,4/15/2025,,,362,555
-"Level Education Group, LLC (dba CE4Less)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (2.00%),9.47%/0.00%,4/1/2021,9/30/2030,12485,12405,12485
-"Level Education Group, LLC (dba CE4Less)",Business Services,Non-control/Non-affiliate,Common Equity,,,4/1/2021,,,934,2798
-"LifeSpan Biosciences, Inc.",Healthcare Products,Non-control/Non-affiliate,Subordinated Debt,,11.50%/0.00%,3/19/2021,4/7/2028,16000,15980,14983
-"LifeSpan Biosciences, Inc.",Healthcare Products,Non-control/Non-affiliate,Common Equity,,,6/7/2024,,,595,421
-"Mayesh Wholesale Florist, LLC",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.96%/0.00%,3/18/2025,3/18/2030,10500,10397,10500
-"Mayesh Wholesale Florist, LLC",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.96%/0.00%,3/18/2025,3/18/2030,,,
-"Mayesh Wholesale Florist, LLC",Specialty Distribution,Non-control/Non-affiliate,Preferred Equity,,,3/18/2025,,,500,736
-"MBS Opco, LLC (dba Marketron)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+8.50%) / (1.50%),12.75%/0.00%,9/29/2022,9/28/2026,27000,26975,27000
-MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,First Lien Debt,(S+6.25%) / (1.00%),10.07%/0.00%,8/31/2023,8/3/2027,12233,12191,11677
-MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,Common Equity,,,9/18/2023,,,,
-MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,Preferred Equity,,,9/18/2023,,,1250,73
-MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,Preferred Equity,,,7/1/2025,,,71,75
-"Netbase Solutions, Inc. (dba Netbase Quid)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(P+2.00%) / (3.25%),8.75%/2.00%,11/18/2021,11/18/2026,16575,16564,16575
-"NWS Technologies, LLC",Utilities: Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (2.50%),11.49%/0.00%,6/20/2023,6/16/2028,17760,17627,17760
-"NWS Technologies, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,6/20/2023,,,1125,1760
-"NWS Technologies, LLC",Utilities: Services,Non-control/Non-affiliate,Preferred Equity,,,6/20/2023,,,375,440
-"OnePath Systems, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,9/30/2022,,,,
-"Onsight Industries, LLC",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (1.50%),9.49%/0.00%,3/27/2025,1/7/2030,9120,9094,9120
-"Onsight Industries, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,1/7/2025,,,380,351
-"Palmetto Moon, LLC",Retail,Non-control/Non-affiliate,Common Equity,,,11/3/2016,,,,1169
-"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Second Lien Debt,,10.50%/1.75%,3/28/2025,9/28/2031,5626,5576,5626
-"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Second Lien Debt,,10.50%/1.75%,3/28/2025,9/28/2031,2880,2868,2880
-"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Second Lien Debt,,10.50%/1.75%,3/28/2025,9/28/2031,,,
-"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Preferred Equity,,,3/28/2025,,,1000,1104
-"Pinnergy, Ltd.",Oil & Gas Services,Non-control/Non-affiliate,Subordinated Debt,,10.00%/0.00%,6/30/2022,6/30/2027,10050,10028,9929
-"PowerGrid Services Acquisition, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,9/21/2021,,,53,9
-"PowerGrid Services Acquisition, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,7/2/2025,,,118,43
-"PowerGrid Services Acquisition, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,7/2/2025,,,133,48
-"Prime AE Group, Inc.",Business Services,Non-control/Non-affiliate,Preferred Equity,,,11/25/2019,,,900,349
-"Pronto Plumbing & Drain, Inc.",Utilities: Services,Non-control/Non-affiliate,First Lien Debt,(S+7.00%) / (2.00%),10.99%/0.00%,5/22/2025,5/22/2030,8683,8598,8683
-"Pronto Plumbing & Drain, Inc.",Utilities: Services,Non-control/Non-affiliate,Revolving Loan,(S+7.00%) / (2.00%),10.99%/0.00%,5/22/2025,5/22/2030,,-4,
-"Pronto Plumbing & Drain, Inc.",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,5/22/2025,,,563,604
-"Puget Collision, LLC",Retail,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (0.75%),8.42%/0.00%,10/3/2025,10/3/2030,12500,12426,12426
-"Puget Collision, LLC",Retail,Non-control/Non-affiliate,Common Equity,,,1/4/2024,,,810,1058
-"QED Technologies International, Inc.",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (1.50%),,3/1/2023,3/1/2028,15551,15494,15551
-"QED Technologies International, Inc.",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (1.50%),,5/30/2025,3/1/2028,2103,2052,2103
-"QED Technologies International, Inc.",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,2/28/2023,,,1402,4018
-Quest Software US Holdings Inc.,Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+1.00%) / (0.50%),4.84%/6.75%,8/11/2025,2/1/2030,17698,17698,16582
-"R1 Holdings, LLC (dba RoadOne IntermodaLogistics)",Transportation services,Non-control/Non-affiliate,First Lien Debt,(S+6.25%) / (1.00%),9.95%/0.00%,12/30/2022,12/30/2028,6231,6104,6231
-"R1 Holdings, LLC (dba RoadOne IntermodaLogistics)",Transportation services,Non-control/Non-affiliate,Subordinated Debt,,8.75%/5.00%,12/30/2022,6/30/2029,1552,1526,1459
-"R1 Holdings, LLC (dba RoadOne IntermodaLogistics)",Transportation services,Non-control/Non-affiliate,Common Equity,,,12/30/2022,,,280,127
-R.F. Fager Company LLC,Specialty Distribution,Non-control/Non-affiliate,Second Lien Debt,,12.75%/0.00%,3/4/2024,8/4/2030,18000,17926,18000
-R.F. Fager Company LLC,Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,3/4/2024,,,1250,1450
-"Sales Rabbit, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,11.00%/2.00%,12/23/2025,12/23/2030,22762,22515,22515
-"ServicePower, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,10.50%/5.50%,3/15/2024,3/15/2028,30033,29826,30033
-"ServicePower, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,8.25%/0.00%,6/6/2025,3/15/2028,5,5,5
-"SES Investors, LLC (dba SES Foam)",Building Products Manufacturing,Non-control/Non-affiliate,Common Equity,,,9/8/2016,,,,
-Sogno Toscano LLC,Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),9.00%/0.00%,7/2/2025,1/2/2029,8500,8445,8445
-Sogno Toscano LLC,Specialty Distribution,Non-control/Non-affiliate,Preferred Equity,,,7/2/2025,,,4250,4250
-Suited Connector LLC,Information Technology Services,Non-control/Non-affiliate,Second Lien Debt,,0.00%/13.00%,10/29/2021,6/1/2028,23590,15934,1476
-Suited Connector LLC,Information Technology Services,Non-control/Non-affiliate,Common Equity,,,12/1/2021,,,857,
-"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (1.00%),12.00%/0.00%,3/4/2022,3/4/2027,14100,14080,14100
-"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,Revolving Loan,(S+7.75%) / (1.00%),12.00%/0.00%,3/4/2022,3/4/2027,500,495,500
-"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,Subordinated Debt,,7.25%/7.25%,3/4/2022,9/4/2027,3322,3317,3606
-"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,Preferred Equity,,,3/4/2022,,,1000,994
-Thrust Flight LLC,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.71%/0.00%,9/9/2024,9/9/2029,12586,12503,12586
-Thrust Flight LLC,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.71%/0.00%,9/9/2024,9/9/2029,,,
-Thrust Flight LLC,Business Services,Non-control/Non-affiliate,Subordinated Debt,,10.00%/5.00%,12/11/2025,3/9/2030,1526,1496,1496
-Thrust Flight LLC,Business Services,Non-control/Non-affiliate,Common Equity,,,9/9/2024,,,1050,681
-True Environmental Inc.,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,5/12/2025,5/12/2030,6650,6610,6650
-True Environmental Inc.,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,5/12/2025,5/12/2030,,,
-True Environmental Inc.,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,5/12/2025,5/12/2030,13300,13219,13300
-True Environmental Inc.,Business Services,Non-control/Non-affiliate,Common Equity,,,5/12/2025,,,500,246
-"UBEO, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,4/3/2018,,,655,1967
-"United Biologics, LLC",Healthcare Services,Non-control/Non-affiliate,Preferred Equity,,,4/1/2012,,,891,
-"United Biologics, LLC",Healthcare Services,Non-control/Non-affiliate,Warrant,,,3/5/2012,,,564,
-"USG AS Holdings, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,2/21/2023,,,4,2802
-"Virginia Tile Company, LLC",Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,12/19/2014,,,,
-"Virtex Enterprises, LP",Component Manufacturing,Non-control/Non-affiliate,Second Lien Debt,(S+0.00%) / (2.50%),3.82%/9.75%,4/13/2022,9/30/2027,17381,10907,
-"Virtex Enterprises, LP",Component Manufacturing,Non-control/Non-affiliate,Subordinated Debt,(S+4.00%) / (2.50%),9.82%/0.00%,9/20/2023,3/31/2027,356,307,208
-"VMS MSO, LLC (dba Vytal Health Partners)",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,,13.75%/0.00%,12/18/2025,12/18/2030,15000,14923,14923
-"VMS MSO, LLC (dba Vytal Health Partners)",Healthcare Services,Non-control/Non-affiliate,Revolving Loan,,13.75%/0.00%,12/18/2025,12/18/2030,,-7,
-"W50 Holdings, LLC",Business Services,Non-control/Non-affiliate,Subordinated Debt,,11.50%/0.00%,3/22/2024,3/24/2031,12500,12383,12500
-"W50 Holdings, LLC",Business Services,Non-control/Non-affiliate,Preferred Equity,,,3/21/2024,,,900,819
-"Waterworks Solutions Acquisition, Inc. (dba CITCO Water)",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (2.00%),8.44%/0.00%,12/26/2025,12/26/2030,15995,15875,15875
-"White Label Communication, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (1.00%),9.21%/0.00%,6/30/2025,6/30/2030,24400,24263,24400
-"White Label Communication, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,10/11/2023,,,,
-"White Label Communication, LLC",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,10/11/2023,,,500,500
-"Wonderware Holdings, LLC (dba CORE Business Technologies)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),8.72%/0.00%,2/10/2021,5/14/2028,8316,8316,8316
-World Tours LLC,Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.00%),10.49%/0.00%,11/13/2024,11/13/2029,6000,5965,6000
-World Tours LLC,Consumer Services,Non-control/Non-affiliate,Preferred Equity,,,11/13/2024,,,1000,1517
-"Worldwide Express Operations, LLC",Transportation services,Non-control/Non-affiliate,Common Equity,,,7/21/2021,,,795,994
-"Worldwide Express Operations, LLC",Transportation services,Non-control/Non-affiliate,Common Equity,,,7/26/2021,,,225,762
-"Zonkd, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,3/18/2022,,,169,487
+company_name,industry,investment_category,investment_type,rate_spread_floor,rate_cash_pik,investment_date,maturity_date,principal_amount,cost,fair_value,rate_reference,rate_spread_pct,rate_floor_pct,rate_cash_pct,rate_pik_pct,rate_parsed_by
+"US GreenFiber, LLC",Building Products Manufacturing,Control,Common Equity,,,7/3/2014,,,586,,,,,,,none
+"US GreenFiber, LLC",Building Products Manufacturing,Control,Common Equity,,,8/30/2019,,,1,,,,,,,none
+"US GreenFiber, LLC",Building Products Manufacturing,Control,Common Equity,,,7/1/2020,,,1023,,,,,,,none
+Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Subordinated Debt,,11.00%/0.00%,12/31/2021,12/31/2027,9602,9602,9602,,,,11.0,0.0,regex
+Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Common Equity,,,12/31/2021,,,5690,7183,,,,,,none
+Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Common Equity,,,12/31/2021,,,7113,9702,,,,,,none
+Applegate Greenfiber Intermediate Inc.,Building Products Manufacturing,Affiliate,Common Equity,,,12/31/2021,,,,,,,,,,none
+"CP Communications, LLC",Business Services,Affiliate,First Lien Debt,(S+8.50%) / (4.00%),12.50%/0.00%,12/4/2024,12/4/2029,5861,5825,5861,SOFR,8.5,4.0,12.5,0.0,regex
+"CP Communications, LLC",Business Services,Affiliate,Preferred Equity,,,12/4/2024,,,500,571,,,,,,none
+"Medsurant Holdings, LLC",Healthcare Services,Affiliate,Preferred Equity,,,4/12/2011,,,,70,,,,,,none
+"Medsurant Holdings, LLC",Healthcare Services,Affiliate,Warrant,,,4/12/2011,,,,238,,,,,,none
+"Pfanstiehl, Inc.",Healthcare Products,Affiliate,Common Equity,,,3/29/2013,,,255,40995,,,,,,none
+"PIPCO, LLC",Utilities: Services,Affiliate,First Lien Debt,(S+6.25%) / (2.00%),9.99%/0.00%,12/11/2025,12/11/2030,9000,8949,8949,SOFR,6.25,2.0,9.99,0.0,regex
+"PIPCO, LLC",Utilities: Services,Affiliate,Revolving Loan,(S+6.25%) / (2.00%),9.99%/0.00%,12/11/2025,12/11/2030,,-14,,SOFR,6.25,2.0,9.99,0.0,regex
+"PIPCO, LLC",Utilities: Services,Affiliate,Common Equity,,,12/11/2025,,,750,750,,,,,,none
+"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,First Lien Debt,(S+6.00%) / (1.00%),9.93%/0.00%,2/12/2021,8/11/2027,28435,28372,28435,SOFR,6.0,1.0,9.93,0.0,regex
+"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,8/25/2021,,,1204,,,,,,,none
+"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,12/16/2022,,,2609,,,,,,,none
+"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,7/10/2023,,,686,,,,,,,none
+"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,9/16/2022,,,472,,,,,,,none
+"Spectra A&D Acquisition, Inc.",Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,5/22/2024,,,2195,2762,,,,,,none
+Steward Holding LLC (dba Steward Advanced Materials),Aerospace & Defense Manufacturing,Affiliate,Common Equity,,,11/12/2015,,,1000,3897,,,,,,none
+"2KDirect, Inc. (dba iPromote)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+8.00%) / (0.50%),12.13%/0.00%,6/25/2021,9/30/2027,6598,6590,6598,SOFR,8.0,0.5,12.13,0.0,regex
+"2KDirect, Inc. (dba iPromote)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+8.00%) / (0.50%),8.38%/0.00%,7/30/2021,9/30/2027,1846,1846,1846,SOFR,8.0,0.5,8.38,0.0,regex
+"2KDirect, Inc. (dba iPromote)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,6/25/2021,,,1000,,,,,,,none
+301 Edison Holdings Inc. (dba LGG Industrial),Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,,11.75%/1.50%,11/14/2023,11/13/2028,11775,11681,11775,,,,11.75,1.5,regex
+301 Edison Holdings Inc. (dba LGG Industrial),Specialty Distribution,Non-control/Non-affiliate,Preferred Equity,,,11/14/2023,,,1000,1000,,,,,,none
+"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,12.50%/1.25%,10/6/2021,3/31/2026,5744,5744,5744,,,,12.5,1.25,regex
+"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,12.50%/1.25%,10/6/2021,3/31/2026,13055,13050,13055,,,,12.5,1.25,regex
+"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,,12.50%/1.25%,10/6/2021,3/31/2026,1010,1010,1010,,,,12.5,1.25,regex
+"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,10/6/2021,,,371,,,,,,,none
+"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Warrant,,,10/6/2021,,,253,,,,,,,none
+"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,9/26/2022,,,88,,,,,,,none
+"Acendre Midco, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,6/10/2025,,,375,998,,,,,,none
+"Ad Info Parent, Inc. (dba MediaRadar)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (1.00%),8.67%/0.00%,11/1/2023,9/16/2029,15917,15847,15917,SOFR,5.0,1.0,8.67,0.0,regex
+"Ad Info Parent, Inc. (dba MediaRadar)",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+5.00%) / (1.00%),8.67%/0.00%,11/1/2023,9/16/2029,247,242,247,SOFR,5.0,1.0,8.67,0.0,regex
+"Ad Info Parent, Inc. (dba MediaRadar)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,11/1/2023,,,1249,1168,,,,,,none
+"Air Burners, Inc.",Utility Equipment Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),8.74%/0.00%,12/8/2025,11/24/2030,6400,6325,6325,SOFR,5.0,2.0,8.74,0.0,regex
+"Air Burners, Inc.",Utility Equipment Manufacturing,Non-control/Non-affiliate,Common Equity,,,11/24/2025,,,800,799,,,,,,none
+"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Second Lien Debt,,0.00%/15.00%,3/2/2020,9/30/2027,18622,17418,15826,,,,0.0,15.0,regex
+"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Common Equity,,,7/21/2017,,,637,,,,,,,none
+"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Common Equity,,,11/24/2021,,,22,,,,,,,none
+"Allredi, LLC",Industrial Cleaning & Coatings,Non-control/Non-affiliate,Common Equity,,,8/3/2023,,,45,,,,,,,none
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,First Lien Debt,(S+6.75%) / (1.00%),10.68%/0.00%,6/28/2021,3/31/2028,22218,22192,21617,SOFR,6.75,1.0,10.68,0.0,regex
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,First Lien Debt,(S+6.75%) / (1.00%),8.18%/0.00%,6/28/2021,3/31/2028,330,330,330,SOFR,6.75,1.0,8.18,0.0,regex
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,First Lien Debt,,15.25%/0.00%,3/28/2024,3/31/2028,5864,5864,11997,,,,15.25,0.0,regex
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,5/31/2018,,,500,,,,,,,none
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,8/6/2019,,,250,,,,,,,none
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,11/2/2020,,,171,,,,,,,none
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,12/29/2021,,,97,,,,,,,none
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,11/27/2024,,,52,,,,,,,none
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Preferred Equity,,,12/30/2024,,,312,,,,,,,none
+American AllWaste LLC (dba WasteWater Transport Services),Environmental Industries,Non-control/Non-affiliate,Common Equity,,,12/30/2024,,,,,,,,,,none
+"AmeriWater, LLC",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+6.25%) / (1.00%),9.92%/0.00%,7/8/2022,7/8/2027,6998,6983,6998,SOFR,6.25,1.0,9.92,0.0,regex
+"AmeriWater, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,7/8/2022,,,1000,2223,,,,,,none
+"AMOpportunities, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,12.50%/0.00%,3/12/2025,3/12/2029,10000,9957,10000,,,,12.5,0.0,regex
+"AMOpportunities, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,3/17/2025,,,801,852,,,,,,none
+"AOM Intermediate Holdco, LLC (dba AllOver Media)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,2/1/2022,,,1372,1364,,,,,,none
+"APM Intermediate Holdings, LLC (dba Artistic Paver Manufacturing, Inc.)",Building Products Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+7.00%) / (2.00%),10.99%/0.00%,11/8/2022,11/8/2027,18200,18159,18200,SOFR,7.0,2.0,10.99,0.0,regex
+"APM Intermediate Holdings, LLC (dba Artistic Paver Manufacturing, Inc.)",Building Products Manufacturing,Non-control/Non-affiliate,Subordinated Debt,,10.00%/5.00%,12/19/2025,2/8/2028,2505,2492,2492,,,,10.0,5.0,regex
+"APM Intermediate Holdings, LLC (dba Artistic Paver Manufacturing, Inc.)",Building Products Manufacturing,Non-control/Non-affiliate,Common Equity,,,11/8/2022,,,1200,1374,,,,,,none
+Auto CRM LLC (dba Dealer Holdings),Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,0.00%/14.50%,10/1/2021,12/31/2028,907,906,907,,,,0.0,14.5,regex
+Auto CRM LLC (dba Dealer Holdings),Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,0.00%/14.50%,12/30/2024,12/31/2028,1993,1993,1993,,,,0.0,14.5,regex
+Auto CRM LLC (dba Dealer Holdings),Information Technology Services,Non-control/Non-affiliate,Common Equity,,,10/1/2021,,,500,,,,,,,none
+Axis Medical Technologies LLC (dba MoveMedical),Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.00%),10.49%/0.00%,10/24/2024,10/24/2029,13600,13548,13600,SOFR,6.5,2.0,10.49,0.0,regex
+Axis Medical Technologies LLC (dba MoveMedical),Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+6.50%) / (2.00%),10.49%/0.00%,10/24/2024,10/24/2029,,-3,,SOFR,6.5,2.0,10.49,0.0,regex
+Axis Medical Technologies LLC (dba MoveMedical),Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,10/25/2024,,,1148,1258,,,,,,none
+"Bad Boy Mowers JV Acquisition, LLC",Consumer Products,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (0.75%),8.94%/0.00%,12/12/2025,11/9/2029,9979,9930,9930,SOFR,5.25,0.75,8.94,0.0,regex
+"Bad Boy Mowers JV Acquisition, LLC",Consumer Products,Non-control/Non-affiliate,Preferred Equity,,,11/9/2023,,,1300,1605,,,,,,none
+"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.99%/0.00%,11/27/2024,12/22/2029,31795,31777,29528,SOFR,6.0,2.0,9.99,0.0,regex
+"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),7.24%/0.00%,7/14/2025,12/22/2029,5,5,5,SOFR,6.0,2.0,7.24,0.0,regex
+"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,Common Equity,,,12/22/2023,,,12,,,,,,,none
+"Barefoot Mosquito and Pest Control, LLC",Consumer Services,Non-control/Non-affiliate,Preferred Equity,,,12/22/2023,,,2013,1380,,,,,,none
+"BCM One Group Holdings, Inc.",Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,11.75%/0.00%,11/17/2021,11/17/2028,17667,17588,17667,,,,11.75,0.0,regex
+Bedford Precision Parts LLC,Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,3/12/2019,,,478,393,,,,,,none
+"Bobcat of Connecticut, LLC",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.74%/0.00%,10/1/2025,10/1/2030,16000,15886,15886,SOFR,5.75,2.0,9.74,0.0,regex
+"Bobcat of Connecticut, LLC",Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,10/1/2025,,,1000,1000,,,,,,none
+Brightmore Brands LLC,Retail,Non-control/Non-affiliate,First Lien Debt,(S+5.38%) / (1.50%),9.38%/0.00%,9/13/2022,9/9/2029,24000,23744,24000,SOFR,5.38,1.5,9.38,0.0,regex
+Brightmore Brands LLC,Retail,Non-control/Non-affiliate,Common Equity,,,9/13/2022,,,1000,1736,,,,,,none
+Brightmore Brands LLC,Retail,Non-control/Non-affiliate,Common Equity,,,9/9/2024,,,713,714,,,,,,none
+"Cardback Intermediate, LLC (dba Chargeback Gurus)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (0.75%),9.20%/0.00%,12/16/2025,12/16/2030,14663,14569,14569,SOFR,5.5,0.75,9.2,0.0,regex
+"Cardback Intermediate, LLC (dba Chargeback Gurus)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,8/10/2021,,,45,332,,,,,,none
+"Cardback Intermediate, LLC (dba Chargeback Gurus)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,8/10/2021,,,45,190,,,,,,none
+"Choice Technology Solutions, LLC (dba Choice Merchant Solutions, LLC)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,8/21/2023,,,,,,,,,,none
+"CIH Intermediate, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,3/3/2022,,,400,3464,,,,,,none
+"CIH Intermediate, LLC",Business Services,Non-control/Non-affiliate,Preferred Equity,,,3/3/2022,,,270,512,,,,,,none
+Cleanova Topco Limited,Component Manufacturing,Non-control/Non-affiliate,Preferred Equity,,,6/12/2025,,,841,841,,,,,,none
+Cleanova Topco Limited,Component Manufacturing,Non-control/Non-affiliate,Preferred Equity,,,6/12/2025,,,436,436,,,,,,none
+Cleanova Topco Limited,Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,6/12/2025,,,454,454,,,,,,none
+"CRS Solutions Holdings, LLC (dba CRS Texas)",Business Services,Non-control/Non-affiliate,Common Equity,,,6/28/2022,,,272,,,,,,,none
+"CTM Group, Inc. (dba Venuplus, Inc.)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+6.75%) / (1.00%),10.57%/0.75%,2/28/2023,11/30/2026,7986,7946,7922,SOFR,6.75,1.0,10.57,0.75,regex
+"CTM Group, Inc. (dba Venuplus, Inc.)",Business Services,Non-control/Non-affiliate,Subordinated Debt,,11.50%/2.75%,2/28/2023,11/30/2027,2380,2370,2211,,,,11.5,2.75,regex
+"CTM Group, Inc. (dba Venuplus, Inc.)",Business Services,Non-control/Non-affiliate,Common Equity,,,2/28/2023,,,400,,,,,,,none
+Customer Expressions Corp (dba Case IQ),Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (1.00%),8.82%/0.50%,1/6/2025,4/15/2029,15188,15101,15188,SOFR,5.0,1.0,8.82,0.5,regex
+Customer Expressions Corp (dba Case IQ),Information Technology Services,Non-control/Non-affiliate,Common Equity,,,1/6/2025,,,771,827,,,,,,none
+"Dataguise, Inc.",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,12/31/2020,,,1500,1703,,,,,,none
+"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (4.00%),9.75%/1.00%,7/21/2023,7/21/2026,13766,13748,13766,SOFR,5.75,4.0,9.75,1.0,regex
+"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,7.50%/7.50%,7/21/2023,1/21/2027,12511,12486,12511,,,,7.5,7.5,regex
+"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,7/21/2023,,,,,,,,,,none
+"Dealerbuilt Acquisition, LLC",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,7/21/2023,,,1000,1033,,,,,,none
+"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.25%),9.74%/2.50%,6/21/2023,6/21/2028,27712,27628,27712,SOFR,5.75,2.25,9.74,2.5,regex
+"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+8.25%) / (2.25%),12.24%/0.00%,7/12/2024,6/21/2028,,-3,,SOFR,8.25,2.25,12.24,0.0,regex
+"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,Subordinated Debt,,0.00%/14.00%,6/21/2023,6/21/2028,2848,2842,2848,,,,0.0,14.0,regex
+"Detechtion Holdings, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,6/21/2023,,,602,501,,,,,,none
+Diversified Search LLC,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (1.00%),11.17%/0.00%,6/10/2019,12/23/2026,24155,24143,23623,SOFR,7.5,1.0,11.17,0.0,regex
+Diversified Search LLC,Business Services,Non-control/Non-affiliate,Common Equity,,,2/7/2019,,,551,88,,,,,,none
+"Donovan Food Brokerage, LLC",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.67%/0.00%,2/23/2024,2/23/2029,24209,24113,24209,SOFR,6.0,2.0,9.67,0.0,regex
+"Donovan Food Brokerage, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,2/23/2024,,,728,1691,,,,,,none
+"E-PlanSoft Buyer, LLC (dba e-PlanSoft)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,11.00%/2.00%,6/30/2025,6/30/2030,8082,8044,8082,,,,11.0,2.0,regex
+"E-PlanSoft Buyer, LLC (dba e-PlanSoft)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,6/27/2025,,,1500,1326,,,,,,none
+"Enterprise Asset Management FM Purchaser, Inc. (dba MCIM)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.74%/2.00%,5/20/2024,5/20/2029,18572,18503,18572,SOFR,5.75,2.0,9.74,2.0,regex
+"Enterprise Asset Management FM Purchaser, Inc. (dba MCIM)",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,5/20/2024,,,750,1010,,,,,,none
+"Estex Manufacturing Company, LLC",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),8.87%/0.00%,10/1/2024,10/1/2029,5531,5486,5531,SOFR,5.0,2.0,8.87,0.0,regex
+"Estex Manufacturing Company, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,10/1/2024,,,750,566,,,,,,none
+"Fishbowl Solutions, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (1.00%),11.97%/0.00%,3/25/2022,3/25/2027,22894,22836,22895,SOFR,7.75,1.0,11.97,0.0,regex
+"Fishbowl Solutions, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (1.00%),11.97%/0.00%,12/27/2024,3/25/2027,12168,12159,12168,SOFR,7.75,1.0,11.97,0.0,regex
+"Fishbowl Solutions, LLC",Information Technology Services,Non-control/Non-affiliate,Revolving Loan,(S+7.75%) / (1.00%),11.97%/0.00%,12/27/2024,3/25/2027,,,,SOFR,7.75,1.0,11.97,0.0,regex
+Fraser Steel LLC,Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.99%/0.00%,11/5/2025,2/5/2030,13800,13737,13800,SOFR,6.0,2.0,9.99,0.0,regex
+Fraser Steel LLC,Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,2/5/2025,,,500,549,,,,,,none
+"Fumex, LLC",Industrial Product Services,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (1.00%),8.75%/0.00%,11/27/2024,11/27/2029,7000,6959,7000,SOFR,4.75,1.0,8.75,0.0,regex
+"Fumex, LLC",Industrial Product Services,Non-control/Non-affiliate,Common Equity,,,11/27/2024,,,350,346,,,,,,none
+"Global Plasma Solutions, Inc.",Component Manufacturing,Non-control/Non-affiliate,Preferred Equity,,,2/1/2024,,,162,282,,,,,,none
+"Global Plasma Solutions, Inc.",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,9/21/2018,,,188,199,,,,,,none
+"GMP HVAC, LLC (dba McGee Heating & Air, LLC)",Utilities: Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.00%),10.37%/0.00%,12/8/2023,12/8/2028,29460,29246,29460,SOFR,6.5,2.0,10.37,0.0,regex
+"GMP HVAC, LLC (dba McGee Heating & Air, LLC)",Utilities: Services,Non-control/Non-affiliate,Preferred Equity,,,12/8/2023,,,1406,1890,,,,,,none
+"GPS Insight, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.58%) / (1.00%),9.57%/0.00%,10/17/2025,5/18/2028,23201,23094,23094,SOFR,5.58,1.0,9.57,0.0,regex
+"Green Cubes Technology, LLC (dba Green Cubes)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (2.00%),11.46%/0.00%,10/16/2024,10/16/2029,22500,22289,22500,SOFR,7.5,2.0,11.46,0.0,regex
+"Haematologic Technologies, Inc.",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (3.00%),9.49%/3.00%,10/11/2019,6/30/2026,6579,6579,6381,SOFR,5.25,3.0,9.49,3.0,regex
+"Haematologic Technologies, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,10/11/2019,,,630,,,,,,,none
+"Haematologic Technologies, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,6/26/2023,,,169,,,,,,,none
+"Hallmark Health Care Solutions, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,9/18/2023,,,3646,1638,,,,,,none
+"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Second Lien Debt,,11.50%/1.25%,4/25/2023,6/30/2028,25121,24947,25121,,,,11.5,1.25,regex
+"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Common Equity,,,3/23/2016,,,,1224,,,,,,none
+"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Common Equity,,,8/7/2023,,,102,134,,,,,,none
+"Hub Acquisition Sub, LLC (dba Hub Pen)",Promotional products,Non-control/Non-affiliate,Preferred Equity,,,10/16/2020,,,154,363,,,,,,none
+"IBH Holdings, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,6/20/2018,,,,,,,,,,none
+"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (2.00%),11.71%/0.50%,9/20/2024,9/20/2028,35065,34775,35065,SOFR,7.75,2.0,11.71,0.5,regex
+"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (2.00%),11.71%/0.50%,12/16/2025,9/20/2028,2993,2964,2994,SOFR,7.75,2.0,11.71,0.5,regex
+"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,Preferred Equity,,,9/20/2024,,,292,330,,,,,,none
+"InductiveHealth Informatics, LLC",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,9/20/2024,,,,,,,,,,none
+"Info Tech Operating, LLC (dba infotech)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+4.88%) / (2.00%),8.55%/0.00%,3/31/2025,3/31/2030,18000,17882,18000,SOFR,4.88,2.0,8.55,0.0,regex
+"Informatics Holdings, Inc. (dba Wasp Barcode Technologies)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.50%),10.49%/0.00%,5/1/2024,3/7/2029,9000,8989,9000,SOFR,6.5,2.5,10.49,0.0,regex
+"Informatics Holdings, Inc. (dba Wasp Barcode Technologies)",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,3/7/2024,,,1000,504,,,,,,none
+"ISI PSG Holdings, LLC (dba Incentive Solutions, Inc.)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (0.50%),11.32%/0.00%,4/5/2021,4/5/2026,9465,9460,9465,SOFR,7.5,0.5,11.32,0.0,regex
+"ISI PSG Holdings, LLC (dba Incentive Solutions, Inc.)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (0.50%),7.82%/0.00%,6/30/2021,4/5/2026,9813,9813,9809,SOFR,7.5,0.5,7.82,0.0,regex
+"ISI PSG Holdings, LLC (dba Incentive Solutions, Inc.)",Business Services,Non-control/Non-affiliate,Common Equity,,,4/5/2021,,,500,349,,,,,,none
+"Janus Health Technologies, Inc.",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,1/3/2024,,,1500,1020,,,,,,none
+"Jumo Health, Inc.",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,8/16/2024,8/16/2029,5940,5888,5940,SOFR,5.5,2.0,9.46,0.0,regex
+"Jumo Health, Inc.",Healthcare Services,Non-control/Non-affiliate,Common Equity,,,8/16/2024,,,,,,,,,,none
+"Jumo Health, Inc.",Healthcare Services,Non-control/Non-affiliate,Preferred Equity,,,8/16/2024,,,750,438,,,,,,none
+"KG Lawn Care, Inc. (dba King Green)",Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.34%/0.00%,11/26/2025,11/26/2030,10000,9933,9945,SOFR,5.5,2.0,9.34,0.0,regex
+"KG Lawn Care, Inc. (dba King Green)",Consumer Services,Non-control/Non-affiliate,Common Equity,,,11/26/2025,,,616,616,,,,,,none
+"The Kyjen Company, LLC (dba Outward Hound)",Consumer Products,Non-control/Non-affiliate,Common Equity,,,12/8/2017,,,933,,,,,,,none
+"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (2.00%),9.24%/0.00%,4/15/2025,4/15/2030,9606,9565,9606,SOFR,5.25,2.0,9.24,0.0,regex
+"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,Revolving Loan,(S+5.25%) / (2.00%),9.24%/0.00%,4/15/2025,4/15/2030,573,558,573,SOFR,5.25,2.0,9.24,0.0,regex
+"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,4/15/2025,,,388,254,,,,,,none
+"Laboratory Testing, LLC",Business Services,Non-control/Non-affiliate,Preferred Equity,,,4/15/2025,,,362,555,,,,,,none
+"Level Education Group, LLC (dba CE4Less)",Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (2.00%),9.47%/0.00%,4/1/2021,9/30/2030,12485,12405,12485,SOFR,5.25,2.0,9.47,0.0,regex
+"Level Education Group, LLC (dba CE4Less)",Business Services,Non-control/Non-affiliate,Common Equity,,,4/1/2021,,,934,2798,,,,,,none
+"LifeSpan Biosciences, Inc.",Healthcare Products,Non-control/Non-affiliate,Subordinated Debt,,11.50%/0.00%,3/19/2021,4/7/2028,16000,15980,14983,,,,11.5,0.0,regex
+"LifeSpan Biosciences, Inc.",Healthcare Products,Non-control/Non-affiliate,Common Equity,,,6/7/2024,,,595,421,,,,,,none
+"Mayesh Wholesale Florist, LLC",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.96%/0.00%,3/18/2025,3/18/2030,10500,10397,10500,SOFR,6.0,2.0,9.96,0.0,regex
+"Mayesh Wholesale Florist, LLC",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+6.00%) / (2.00%),9.96%/0.00%,3/18/2025,3/18/2030,,,,SOFR,6.0,2.0,9.96,0.0,regex
+"Mayesh Wholesale Florist, LLC",Specialty Distribution,Non-control/Non-affiliate,Preferred Equity,,,3/18/2025,,,500,736,,,,,,none
+"MBS Opco, LLC (dba Marketron)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+8.50%) / (1.50%),12.75%/0.00%,9/29/2022,9/28/2026,27000,26975,27000,SOFR,8.5,1.5,12.75,0.0,regex
+MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,First Lien Debt,(S+6.25%) / (1.00%),10.07%/0.00%,8/31/2023,8/3/2027,12233,12191,11677,SOFR,6.25,1.0,10.07,0.0,regex
+MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,Common Equity,,,9/18/2023,,,,,,,,,,none
+MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,Preferred Equity,,,9/18/2023,,,1250,73,,,,,,none
+MDME Holding Corp.,Healthcare Products,Non-control/Non-affiliate,Preferred Equity,,,7/1/2025,,,71,75,,,,,,none
+"Netbase Solutions, Inc. (dba Netbase Quid)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(P+2.00%) / (3.25%),8.75%/2.00%,11/18/2021,11/18/2026,16575,16564,16575,Prime,2.0,3.25,8.75,2.0,regex
+"NWS Technologies, LLC",Utilities: Services,Non-control/Non-affiliate,First Lien Debt,(S+7.50%) / (2.50%),11.49%/0.00%,6/20/2023,6/16/2028,17760,17627,17760,SOFR,7.5,2.5,11.49,0.0,regex
+"NWS Technologies, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,6/20/2023,,,1125,1760,,,,,,none
+"NWS Technologies, LLC",Utilities: Services,Non-control/Non-affiliate,Preferred Equity,,,6/20/2023,,,375,440,,,,,,none
+"OnePath Systems, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,9/30/2022,,,,,,,,,,none
+"Onsight Industries, LLC",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (1.50%),9.49%/0.00%,3/27/2025,1/7/2030,9120,9094,9120,SOFR,5.5,1.5,9.49,0.0,regex
+"Onsight Industries, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,1/7/2025,,,380,351,,,,,,none
+"Palmetto Moon, LLC",Retail,Non-control/Non-affiliate,Common Equity,,,11/3/2016,,,,1169,,,,,,none
+"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Second Lien Debt,,10.50%/1.75%,3/28/2025,9/28/2031,5626,5576,5626,,,,10.5,1.75,regex
+"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Second Lien Debt,,10.50%/1.75%,3/28/2025,9/28/2031,2880,2868,2880,,,,10.5,1.75,regex
+"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Second Lien Debt,,10.50%/1.75%,3/28/2025,9/28/2031,,,,,,,10.5,1.75,regex
+"PayEntry Financial Services, Inc. (dba Payentry)",Business Services,Non-control/Non-affiliate,Preferred Equity,,,3/28/2025,,,1000,1104,,,,,,none
+"Pinnergy, Ltd.",Oil & Gas Services,Non-control/Non-affiliate,Subordinated Debt,,10.00%/0.00%,6/30/2022,6/30/2027,10050,10028,9929,,,,10.0,0.0,regex
+"PowerGrid Services Acquisition, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,9/21/2021,,,53,9,,,,,,none
+"PowerGrid Services Acquisition, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,7/2/2025,,,118,43,,,,,,none
+"PowerGrid Services Acquisition, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,7/2/2025,,,133,48,,,,,,none
+"Prime AE Group, Inc.",Business Services,Non-control/Non-affiliate,Preferred Equity,,,11/25/2019,,,900,349,,,,,,none
+"Pronto Plumbing & Drain, Inc.",Utilities: Services,Non-control/Non-affiliate,First Lien Debt,(S+7.00%) / (2.00%),10.99%/0.00%,5/22/2025,5/22/2030,8683,8598,8683,SOFR,7.0,2.0,10.99,0.0,regex
+"Pronto Plumbing & Drain, Inc.",Utilities: Services,Non-control/Non-affiliate,Revolving Loan,(S+7.00%) / (2.00%),10.99%/0.00%,5/22/2025,5/22/2030,,-4,,SOFR,7.0,2.0,10.99,0.0,regex
+"Pronto Plumbing & Drain, Inc.",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,5/22/2025,,,563,604,,,,,,none
+"Puget Collision, LLC",Retail,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (0.75%),8.42%/0.00%,10/3/2025,10/3/2030,12500,12426,12426,SOFR,4.75,0.75,8.42,0.0,regex
+"Puget Collision, LLC",Retail,Non-control/Non-affiliate,Common Equity,,,1/4/2024,,,810,1058,,,,,,none
+"QED Technologies International, Inc.",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (1.50%),,3/1/2023,3/1/2028,15551,15494,15551,SOFR,4.75,1.5,,,regex
+"QED Technologies International, Inc.",Component Manufacturing,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (1.50%),,5/30/2025,3/1/2028,2103,2052,2103,SOFR,4.75,1.5,,,regex
+"QED Technologies International, Inc.",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,2/28/2023,,,1402,4018,,,,,,none
+Quest Software US Holdings Inc.,Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+1.00%) / (0.50%),4.84%/6.75%,8/11/2025,2/1/2030,17698,17698,16582,SOFR,1.0,0.5,4.84,6.75,regex
+"R1 Holdings, LLC (dba RoadOne IntermodaLogistics)",Transportation services,Non-control/Non-affiliate,First Lien Debt,(S+6.25%) / (1.00%),9.95%/0.00%,12/30/2022,12/30/2028,6231,6104,6231,SOFR,6.25,1.0,9.95,0.0,regex
+"R1 Holdings, LLC (dba RoadOne IntermodaLogistics)",Transportation services,Non-control/Non-affiliate,Subordinated Debt,,8.75%/5.00%,12/30/2022,6/30/2029,1552,1526,1459,,,,8.75,5.0,regex
+"R1 Holdings, LLC (dba RoadOne IntermodaLogistics)",Transportation services,Non-control/Non-affiliate,Common Equity,,,12/30/2022,,,280,127,,,,,,none
+R.F. Fager Company LLC,Specialty Distribution,Non-control/Non-affiliate,Second Lien Debt,,12.75%/0.00%,3/4/2024,8/4/2030,18000,17926,18000,,,,12.75,0.0,regex
+R.F. Fager Company LLC,Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,3/4/2024,,,1250,1450,,,,,,none
+"Sales Rabbit, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,11.00%/2.00%,12/23/2025,12/23/2030,22762,22515,22515,,,,11.0,2.0,regex
+"ServicePower, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,10.50%/5.50%,3/15/2024,3/15/2028,30033,29826,30033,,,,10.5,5.5,regex
+"ServicePower, Inc.",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,,8.25%/0.00%,6/6/2025,3/15/2028,5,5,5,,,,8.25,0.0,regex
+"SES Investors, LLC (dba SES Foam)",Building Products Manufacturing,Non-control/Non-affiliate,Common Equity,,,9/8/2016,,,,,,,,,,none
+Sogno Toscano LLC,Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),9.00%/0.00%,7/2/2025,1/2/2029,8500,8445,8445,SOFR,5.0,2.0,9.0,0.0,regex
+Sogno Toscano LLC,Specialty Distribution,Non-control/Non-affiliate,Preferred Equity,,,7/2/2025,,,4250,4250,,,,,,none
+Suited Connector LLC,Information Technology Services,Non-control/Non-affiliate,Second Lien Debt,,0.00%/13.00%,10/29/2021,6/1/2028,23590,15934,1476,,,,0.0,13.0,regex
+Suited Connector LLC,Information Technology Services,Non-control/Non-affiliate,Common Equity,,,12/1/2021,,,857,,,,,,,none
+"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,First Lien Debt,(S+7.75%) / (1.00%),12.00%/0.00%,3/4/2022,3/4/2027,14100,14080,14100,SOFR,7.75,1.0,12.0,0.0,regex
+"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,Revolving Loan,(S+7.75%) / (1.00%),12.00%/0.00%,3/4/2022,3/4/2027,500,495,500,SOFR,7.75,1.0,12.0,0.0,regex
+"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,Subordinated Debt,,7.25%/7.25%,3/4/2022,9/4/2027,3322,3317,3606,,,,7.25,7.25,regex
+"Tedia Company, LLC",Healthcare Products,Non-control/Non-affiliate,Preferred Equity,,,3/4/2022,,,1000,994,,,,,,none
+Thrust Flight LLC,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.71%/0.00%,9/9/2024,9/9/2029,12586,12503,12586,SOFR,5.75,2.0,9.71,0.0,regex
+Thrust Flight LLC,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.75%) / (2.00%),9.71%/0.00%,9/9/2024,9/9/2029,,,,SOFR,5.75,2.0,9.71,0.0,regex
+Thrust Flight LLC,Business Services,Non-control/Non-affiliate,Subordinated Debt,,10.00%/5.00%,12/11/2025,3/9/2030,1526,1496,1496,,,,10.0,5.0,regex
+Thrust Flight LLC,Business Services,Non-control/Non-affiliate,Common Equity,,,9/9/2024,,,1050,681,,,,,,none
+True Environmental Inc.,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,5/12/2025,5/12/2030,6650,6610,6650,SOFR,5.5,2.0,9.46,0.0,regex
+True Environmental Inc.,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,5/12/2025,5/12/2030,,,,SOFR,5.5,2.0,9.46,0.0,regex
+True Environmental Inc.,Business Services,Non-control/Non-affiliate,First Lien Debt,(S+5.50%) / (2.00%),9.46%/0.00%,5/12/2025,5/12/2030,13300,13219,13300,SOFR,5.5,2.0,9.46,0.0,regex
+True Environmental Inc.,Business Services,Non-control/Non-affiliate,Common Equity,,,5/12/2025,,,500,246,,,,,,none
+"UBEO, LLC",Business Services,Non-control/Non-affiliate,Common Equity,,,4/3/2018,,,655,1967,,,,,,none
+"United Biologics, LLC",Healthcare Services,Non-control/Non-affiliate,Preferred Equity,,,4/1/2012,,,891,,,,,,,none
+"United Biologics, LLC",Healthcare Services,Non-control/Non-affiliate,Warrant,,,3/5/2012,,,564,,,,,,,none
+"USG AS Holdings, LLC",Utilities: Services,Non-control/Non-affiliate,Common Equity,,,2/21/2023,,,4,2802,,,,,,none
+"Virginia Tile Company, LLC",Specialty Distribution,Non-control/Non-affiliate,Common Equity,,,12/19/2014,,,,,,,,,,none
+"Virtex Enterprises, LP",Component Manufacturing,Non-control/Non-affiliate,Second Lien Debt,(S+0.00%) / (2.50%),3.82%/9.75%,4/13/2022,9/30/2027,17381,10907,,SOFR,0.0,2.5,3.82,9.75,regex
+"Virtex Enterprises, LP",Component Manufacturing,Non-control/Non-affiliate,Subordinated Debt,(S+4.00%) / (2.50%),9.82%/0.00%,9/20/2023,3/31/2027,356,307,208,SOFR,4.0,2.5,9.82,0.0,regex
+"VMS MSO, LLC (dba Vytal Health Partners)",Healthcare Services,Non-control/Non-affiliate,First Lien Debt,,13.75%/0.00%,12/18/2025,12/18/2030,15000,14923,14923,,,,13.75,0.0,regex
+"VMS MSO, LLC (dba Vytal Health Partners)",Healthcare Services,Non-control/Non-affiliate,Revolving Loan,,13.75%/0.00%,12/18/2025,12/18/2030,,-7,,,,,13.75,0.0,regex
+"W50 Holdings, LLC",Business Services,Non-control/Non-affiliate,Subordinated Debt,,11.50%/0.00%,3/22/2024,3/24/2031,12500,12383,12500,,,,11.5,0.0,regex
+"W50 Holdings, LLC",Business Services,Non-control/Non-affiliate,Preferred Equity,,,3/21/2024,,,900,819,,,,,,none
+"Waterworks Solutions Acquisition, Inc. (dba CITCO Water)",Specialty Distribution,Non-control/Non-affiliate,First Lien Debt,(S+4.75%) / (2.00%),8.44%/0.00%,12/26/2025,12/26/2030,15995,15875,15875,SOFR,4.75,2.0,8.44,0.0,regex
+"White Label Communication, LLC",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.25%) / (1.00%),9.21%/0.00%,6/30/2025,6/30/2030,24400,24263,24400,SOFR,5.25,1.0,9.21,0.0,regex
+"White Label Communication, LLC",Information Technology Services,Non-control/Non-affiliate,Common Equity,,,10/11/2023,,,,,,,,,,none
+"White Label Communication, LLC",Information Technology Services,Non-control/Non-affiliate,Preferred Equity,,,10/11/2023,,,500,500,,,,,,none
+"Wonderware Holdings, LLC (dba CORE Business Technologies)",Information Technology Services,Non-control/Non-affiliate,First Lien Debt,(S+5.00%) / (2.00%),8.72%/0.00%,2/10/2021,5/14/2028,8316,8316,8316,SOFR,5.0,2.0,8.72,0.0,regex
+World Tours LLC,Consumer Services,Non-control/Non-affiliate,First Lien Debt,(S+6.50%) / (2.00%),10.49%/0.00%,11/13/2024,11/13/2029,6000,5965,6000,SOFR,6.5,2.0,10.49,0.0,regex
+World Tours LLC,Consumer Services,Non-control/Non-affiliate,Preferred Equity,,,11/13/2024,,,1000,1517,,,,,,none
+"Worldwide Express Operations, LLC",Transportation services,Non-control/Non-affiliate,Common Equity,,,7/21/2021,,,795,994,,,,,,none
+"Worldwide Express Operations, LLC",Transportation services,Non-control/Non-affiliate,Common Equity,,,7/26/2021,,,225,762,,,,,,none
+"Zonkd, LLC",Component Manufacturing,Non-control/Non-affiliate,Common Equity,,,3/18/2022,,,169,487,,,,,,none
