@@ -63,7 +63,7 @@ ANTHROPIC_API_KEY=sk-ant-...
    cd bdc-portfolio-parser
    python -m venv venv
    ```
-   Activate it: `.\venv\Scripts\activate` (Windows) or `source venv/bin/activate` (macOS / Linux).
+   Activate it: `.\venv\Scripts\activate` (Windows PowerShell / cmd), `source venv/Scripts/activate` (Git Bash on Windows), or `source venv/bin/activate` (macOS / Linux).
 
 2. **Install** (see [Install](#install) for the three options):
    ```bash
