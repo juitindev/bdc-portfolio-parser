@@ -1,4 +1,7 @@
-"""Parse the FY2025 Schedule of Investments (tables #79-#83) into a flat CSV.
+"""Parse a BDC 10-K Schedule of Investments into a flat CSV.
+
+Table indices come from bdc_parser.locate.find_schedule_groups() at runtime —
+no fiscal year or table-index hardcodes. We parse groups[0] (current FY).
 
 Row classification strategy — each <tr> is one of:
   - HEADER:    contains "Portfolio Company" / "Investment Type"
@@ -12,9 +15,6 @@ Row classification strategy — each <tr> is one of:
 For INVEST rows, we extract fields by content-pattern matching rather than
 hard-coded cell indices, because $ signs and ) occupy their own cells and
 shift positions.
-
-Table indices to parse are detected by bdc_parser.locate.find_schedule_groups()
-— no hardcoded FY2025_TABLES list. We parse groups[0] (most recent FY).
 """
 from __future__ import annotations
 

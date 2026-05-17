@@ -40,7 +40,7 @@ bdc-parse schedule FDUS                                     # parse Schedule -> 
 bdc-parse schedule FDUS --no-llm                            # regex-only run
 bdc-parse rank FDUS --top 10                                # aggregate by company
 bdc-parse deepdive FDUS --target inductivehealth            # one portfolio company
-bdc-parse website FDUS --target inductivehealth \
+bdc-parse website --target inductivehealth \
     --url https://inductivehealth.com/                      # polite site scrape
 bdc-parse execs --target inductivehealth                    # rank executives
 ```

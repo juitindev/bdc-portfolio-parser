@@ -5,6 +5,7 @@ __pycache__/
 .env
 *.html
 raw/
+tmp/
 build/
 dist/
 *.egg-info/

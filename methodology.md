@@ -1,8 +1,8 @@
 # Methodology
 
-Technical detail on how data was retrieved, parsed, and validated. Each step corresponds to a script in `src/`.
+Technical detail on how data was retrieved, parsed, and validated. Each step corresponds to a module in `src/bdc_parser/`.
 
-## 1. Filing Retrieval (`src/fetch_filing.py`)
+## 1. Filing Retrieval (`src/bdc_parser/fetch.py`)
 
 Used [edgartools](https://github.com/dgunning/edgartools) v5.30.0 to fetch the filing via SEC EDGAR's REST API:
 
@@ -14,7 +14,7 @@ This bypasses browser-based scraping entirely. edgartools handles EDGAR rate lim
 
 Filing: Fidus Investment Corporation 10-K, FY2025, filed 2026-02-26, accession 0001193125-26-076572, CIK 0001513363.
 
-## 2. Locating the Schedule of Investments (`src/locate_schedule.py`)
+## 2. Locating the Schedule of Investments (`src/bdc_parser/locate.py`)
 
 The 10-K contains 158 HTML `<table>` elements. The Schedule of Investments is not a single table — it is split across 5 consecutive `<table>` elements (tables #79–#83), an artifact of page breaks in the original filing document.
 
@@ -30,7 +30,7 @@ Within Group 1, the three Investment Company Act categories appear as inline sec
 
 Section labels were matched longest-first to avoid substring collisions ("control investments" is a substring of "non-control/non-affiliate investments").
 
-## 3. Row Parsing (`src/parse_schedule.py`)
+## 3. Row Parsing (`src/bdc_parser/parse.py`)
 
 Each `<tr>` in the Schedule was classified as one of:
 
@@ -70,7 +70,7 @@ Cleaning steps:
 
 **Sanity check**: Sum of `fair_value` across all 241 parsed rows = **$1,324,753K**. This matches the filing's "Total Investments" subtotal line exactly. The filing also shows "Total Investments and Money Market Funds" of $1,393,727K, which includes $68,974K in Goldman Sachs money market funds — correctly excluded from our parse (cash equivalents, not portfolio companies).
 
-## 4. Company Aggregation (`src/rank_top_companies.py`)
+## 4. Company Aggregation (`src/bdc_parser/rank.py`)
 
 Many portfolio companies have multiple investment rows — a typical BDC capital structure might include First Lien Debt + Revolving Loan + Preferred Equity + Common Equity across separate rows.
 
@@ -82,7 +82,7 @@ Aggregation:
 
 One naming note: "Applegate Greenfiber Intermediate Inc." (Affiliate, rank #13) and "US GreenFiber, LLC" (Control, rank #103) are related entities (filing notes "fka US GreenFiber"). They are kept separate because the filing lists them as distinct legal entities in different investment categories.
 
-## 5. Website Scraping — InductiveHealth (`src/scrape_company_website.py`)
+## 5. Website Scraping — InductiveHealth (`src/bdc_parser/website.py`)
 
 Target: inductivehealth.com (WordPress, server-rendered static HTML).
 
@@ -120,7 +120,7 @@ Parser assumptions that hold across BDCs (per Investment Company Act):
 - Schedule of Investments is a required disclosure. Always present in 10-K.
 
 Parser assumptions that may vary across BDCs:
-- **Column headers**: Some BDCs use "Par Amount" instead of "Principal Amount". Some omit the "Industry" column. Some add "% of Total Investments" instead of "% of Net Assets". The table-detection heuristic is tolerant, but the field-mapping logic in `parse_schedule.py` needs minor adjustments per BDC.
-- **Table splitting**: The number of HTML `<table>` elements varies by filing preparer. Some BDCs render the entire Schedule as a single table; others split across 5-10 tables. The continuation-detection logic (is_header_table + has_investment_data within 2 table positions) handles this.
+- **Column headers**: BDCs use varied header strings — "Par Amount" vs "Principal Amount", optional "Industry" column, "% of Total Investments" vs "% of Net Assets". The parser does not match by header text; it extracts fields by content pattern (dates as `M/D/YYYY`, rates as `X.XX%`, amounts as comma-separated digits, investment-type keywords for the type cell). Column reorderings and renames are absorbed automatically — there is no per-BDC field-mapping configuration to maintain.
+- **Table splitting**: The number of HTML `<table>` elements varies by filing preparer. Some BDCs render the entire Schedule as a single table; others split across 5-10 tables. The continuation-detection logic in `find_schedule_groups()` (is_header_table + has_investment_data within 2 table positions) handles this.
 - **Footnote conventions**: Marker styles vary (`(a)` vs `(1)` vs `*`). The current regex strips single and double lowercase letter markers. Numeric markers would need a pattern update.
 - **Portfolio size**: FDUS has 103 companies / 241 rows. Larger BDCs like ARCC (~500 companies) will have proportionally larger Schedules but the same structure. Not tested at that scale but no structural reason it wouldn't work.
