@@ -13,24 +13,97 @@ A worked example using Fidus Investment Corp's FY2025 10-K is included in `data/
 
 ## Install
 
+Three labelled options:
+
+**Core** (parsing only, no LLM):
 ```bash
-git clone https://github.com/juitindev/bdc-portfolio-parser.git
-cd bdc-portfolio-parser
-python -m venv venv
-./venv/Scripts/python -m pip install -e ".[dev]"          # Windows
-# source venv/bin/activate && pip install -e ".[dev]"      # macOS / Linux
+pip install -e .
 ```
 
-LLM extras are optional and chosen by provider:
-
+**With LLM rate-parsing** (adds langchain + a provider SDK):
 ```bash
-pip install -e ".[anthropic]"   # or .[openai]
-export ANTHROPIC_API_KEY=sk-ant-...
+pip install -e ".[anthropic]"      # or .[openai]
 ```
 
-With no extras and no key, every rate string is still parsed by the regex layer.
+**For development** (adds pytest for the test suite):
+```bash
+pip install -e ".[dev]"
+```
 
-## CLI
+Extras are additive — combine with a comma, e.g. `pip install -e ".[dev,anthropic]"`. **`[dev]` does NOT include the LLM layer** — install an `[anthropic]` or `[openai]` extra alongside `[dev]` if you want LLM fallback while running tests.
+
+## Configuration
+
+EDGAR requires every request to identify itself with a name + email. Copy the template and edit:
+
+```bash
+cp .env.example .env
+# then edit .env: set EDGAR_IDENTITY=Your Name your@email.com
+```
+
+A placeholder default lives in code (`BDC Portfolio Parser parser@example.com`), but **SEC may rate-limit or block it — set your own real identity before running `bdc-parse fetch`.**
+
+If you installed an LLM extra and want the fallback active, also add a provider key to `.env`:
+
+```
+ANTHROPIC_API_KEY=sk-ant-...
+# or OPENAI_API_KEY=...
+# or GOOGLE_API_KEY=...
+```
+
+`.env` is the cross-platform way to set these. The CLI auto-loads `.env` from the current working directory at startup; a shell-exported variable takes precedence over `.env` if both are set. If you prefer the shell, the equivalents are `export VAR=value` (bash / zsh) or `$env:VAR = "value"` (PowerShell).
+
+## Quickstart
+
+`raw/` is gitignored, so a fresh clone has no cached filing — **`bdc-parse fetch FDUS` MUST run before `schedule` / `rank` / `deepdive`.** Follow these six steps in order:
+
+1. **Clone and create the venv**
+   ```bash
+   git clone https://github.com/juitindev/bdc-portfolio-parser.git
+   cd bdc-portfolio-parser
+   python -m venv venv
+   ```
+   Activate it: `.\venv\Scripts\activate` (Windows) or `source venv/bin/activate` (macOS / Linux).
+
+2. **Install** (see [Install](#install) for the three options):
+   ```bash
+   pip install -e .
+   ```
+
+3. **Configure `.env`** (see [Configuration](#configuration)):
+   ```bash
+   cp .env.example .env
+   # edit .env and set EDGAR_IDENTITY=Your Name your@email.com
+   ```
+
+4. **Fetch** the 10-K from EDGAR (~17MB, one-time per filing):
+   ```bash
+   bdc-parse fetch FDUS
+   ```
+
+5. **Parse** the Schedule of Investments:
+   ```bash
+   bdc-parse schedule FDUS
+   ```
+   Output: `data/fdus_schedule_full.csv` (241 rows × 17 columns).
+
+6. **Rank** portfolio companies by aggregate fair value:
+   ```bash
+   bdc-parse rank FDUS
+   ```
+   Output: `data/fdus_top10_by_fair_value.csv`.
+
+Optional deep-dive on one portfolio company:
+
+```bash
+bdc-parse deepdive FDUS --target inductivehealth
+bdc-parse website --target inductivehealth --url https://inductivehealth.com/
+bdc-parse execs --target inductivehealth
+```
+
+End-to-end (steps 4–6) takes ~30s on a warm cache. Subsequent runs read from `raw/<ticker>_10k_latest.html` without re-hitting EDGAR.
+
+## CLI reference
 
 ```bash
 bdc-parse profiles                                          # list available BDCs
