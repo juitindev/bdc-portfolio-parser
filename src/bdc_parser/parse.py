@@ -23,6 +23,7 @@ import csv
 import warnings
 from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
+from bdc_parser.ai.rate_parser import parse_rate
 from bdc_parser.locate import find_schedule_groups
 from bdc_parser.models import BDCProfile
 from bdc_parser.paths import cache_path, schedule_csv
@@ -187,8 +188,14 @@ def extract_investment_fields(cells_text: list[str]) -> dict:
     return fields
 
 
-def run(profile: BDCProfile):
-    """Parse the Schedule of Investments to CSV. Returns the output CSV path."""
+def run(profile: BDCProfile, *, use_llm: bool = True):
+    """Parse the Schedule of Investments to CSV. Returns the output CSV path.
+
+    Rate strings are parsed into structured RateTerms columns. Regex runs
+    first; the LLM is only invoked when regex output is incomplete AND
+    `use_llm=True` AND langchain + an API key are present. Otherwise the
+    regex result stands.
+    """
     html_path = cache_path(profile.ticker)
     out_path = schedule_csv(profile.ticker)
 
@@ -241,6 +248,11 @@ def run(profile: BDCProfile):
 
             elif row_type == "INVEST":
                 fields = extract_investment_fields(texts)
+                rt = parse_rate(
+                    fields["rate_spread_floor"],
+                    fields["rate_cash_pik"],
+                    use_llm=use_llm,
+                )
                 rows_out.append({
                     "company_name": current_company,
                     "industry": current_industry,
@@ -253,6 +265,12 @@ def run(profile: BDCProfile):
                     "principal_amount": fields["principal_amount"],
                     "cost": fields["cost"],
                     "fair_value": fields["fair_value"],
+                    "rate_reference": rt.reference or "",
+                    "rate_spread_pct": "" if rt.spread_pct is None else rt.spread_pct,
+                    "rate_floor_pct": "" if rt.floor_pct is None else rt.floor_pct,
+                    "rate_cash_pct": "" if rt.cash_pct is None else rt.cash_pct,
+                    "rate_pik_pct": "" if rt.pik_pct is None else rt.pik_pct,
+                    "rate_parsed_by": rt.parsed_by,
                 })
 
             elif row_type == "UNKNOWN":
@@ -265,6 +283,8 @@ def run(profile: BDCProfile):
         "company_name", "industry", "investment_category", "investment_type",
         "rate_spread_floor", "rate_cash_pik", "investment_date", "maturity_date",
         "principal_amount", "cost", "fair_value",
+        "rate_reference", "rate_spread_pct", "rate_floor_pct",
+        "rate_cash_pct", "rate_pik_pct", "rate_parsed_by",
     ]
     with open(out_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -304,6 +324,11 @@ def run(profile: BDCProfile):
     type_counts = Counter(r["investment_type"] for r in rows_out)
     for typ, count in type_counts.most_common():
         print(f"  {typ}: {count}")
+
+    print(f"\nRate parsing summary:")
+    rate_counts = Counter(r["rate_parsed_by"] for r in rows_out)
+    for kind, count in rate_counts.most_common():
+        print(f"  {kind}: {count}")
 
     print(f"\nFirst 10 rows:")
     print(f"{'Company':<40} {'Type':<20} {'Cost':>10} {'FV':>10}")

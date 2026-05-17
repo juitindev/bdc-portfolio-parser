@@ -42,7 +42,7 @@ def cmd_locate(args) -> int:
 def cmd_schedule(args) -> int:
     from bdc_parser.parse import run
     profile = load_profile(args.ticker)
-    out = run(profile)
+    out = run(profile, use_llm=not args.no_llm)
     return 0 if out else 1
 
 
@@ -106,6 +106,8 @@ def main(argv: list[str] | None = None) -> int:
 
     sp = sub.add_parser("schedule", help="parse the Schedule of Investments to CSV")
     _add_ticker(sp)
+    sp.add_argument("--no-llm", action="store_true",
+                    help="disable LLM rate-parsing fallback (regex-only)")
 
     sp = sub.add_parser("rank", help="rank portfolio companies by fair value")
     _add_ticker(sp)
