@@ -90,6 +90,9 @@ def _looks_incomplete(rt: RateTerms) -> bool:
     return not (has_floating or has_fixed)
 
 
+_NULL_TOKENS = {"", "-", "--", "—", "—"}
+
+
 def parse_rate(
     spread_floor: str = "",
     cash_pik: str = "",
@@ -99,6 +102,10 @@ def parse_rate(
     """Public entry point. Equity rows (no rate strings) return RateTerms(parsed_by='none')."""
     spread_floor = (spread_floor or "").strip()
     cash_pik = (cash_pik or "").strip()
+    if spread_floor in _NULL_TOKENS:
+        spread_floor = ""
+    if cash_pik in _NULL_TOKENS:
+        cash_pik = ""
     if not spread_floor and not cash_pik:
         return RateTerms(raw="", parsed_by="none")
 
