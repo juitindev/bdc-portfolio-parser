@@ -13,8 +13,8 @@ For INVEST rows, we extract fields by content-pattern matching rather than
 hard-coded cell indices, because $ signs and ) occupy their own cells and
 shift positions.
 
-Migrated from src/parse_schedule.py — logic unchanged. Phase 3 will remove
-the FY2025_TABLES hardcode by importing locate.find_schedule_groups().
+Table indices to parse are detected by bdc_parser.locate.find_schedule_groups()
+— no hardcoded FY2025_TABLES list. We parse groups[0] (most recent FY).
 """
 from __future__ import annotations
 
@@ -24,13 +24,13 @@ import warnings
 from pathlib import Path
 from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
+from bdc_parser.locate import find_schedule_groups
+
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CACHE_PATH = PROJECT_ROOT / "raw" / "fdus_10k_latest.html"
 OUTPUT_PATH = PROJECT_ROOT / "data" / "fdus_schedule_full.csv"
-
-FY2025_TABLES = [79, 80, 81, 82, 83]
 
 SECTION_LABELS = [
     ("non-control/non-affiliate investments", "Non-control/Non-affiliate"),
@@ -200,13 +200,25 @@ def main():
     soup = BeautifulSoup(html, "lxml")
     all_tables = soup.find_all("table")
 
+    groups = find_schedule_groups(html)
+    if not groups:
+        print("ERROR: No Schedule of Investments tables detected.")
+        return
+    target = groups[0]  # current FY — earliest in document order
+    print(f"Detected Schedule of Investments: tables #{target.start}-#{target.end} "
+          f"({len(target.tables)} tables)")
+    if len(groups) > 1:
+        prior = groups[1]
+        print(f"  (also found {len(groups) - 1} prior-period group(s), e.g. "
+              f"tables #{prior.start}-#{prior.end} — not parsed)")
+
     current_section = "Unknown"
     current_company = ""
     current_industry = ""
     rows_out = []
     unknown_rows = []
 
-    for t_idx in FY2025_TABLES:
+    for t_idx in target.tables:
         table = all_tables[t_idx]
         for row in table.find_all("tr"):
             cells = row.find_all(["td", "th"])

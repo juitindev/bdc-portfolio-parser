@@ -1,14 +1,18 @@
-"""Locate Schedule of Investments table(s) in the cached FDUS 10-K HTML.
+"""Locate Schedule of Investments table(s) in a 10-K HTML document.
 
-The Schedule spans multiple <table> elements (page breaks in the original filing).
-We identify them by the header row pattern and by section markers within the tables.
+The Schedule typically spans multiple <table> elements (page breaks in the
+original filing). We identify them by header-row text and by adjacency
+to other investment-data tables.
 
-Migrated from src/locate_schedule.py — logic unchanged.
+Most BDC 10-Ks report the current fiscal year's Schedule first, followed by
+the prior-year comparative. find_schedule_groups() returns groups in
+document order; the caller usually wants groups[0] (current FY).
 """
 from __future__ import annotations
 
 import re
 import warnings
+from dataclasses import dataclass, field
 from pathlib import Path
 from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
@@ -17,14 +21,12 @@ warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 CACHE_PATH = PROJECT_ROOT / "raw" / "fdus_10k_latest.html"
 
-# Section markers that appear as standalone row text
 SECTION_MARKERS = [
     "Control Investments",
     "Affiliate Investments",
     "Non-control/Non-affiliate Investments",
 ]
 
-# Totals patterns
 TOTAL_PATTERNS = [
     r"Total Control Investments",
     r"Total Affiliate Investments",
@@ -34,10 +36,25 @@ TOTAL_PATTERNS = [
 ]
 
 
+@dataclass
+class ScheduleGroup:
+    """One contiguous run of <table> elements that together form a Schedule of Investments."""
+    header_table: int           # index of the table that contains the column-header row
+    tables: list[int] = field(default_factory=list)  # all table indices in this group, in order
+
+    @property
+    def start(self) -> int:
+        return self.tables[0]
+
+    @property
+    def end(self) -> int:
+        return self.tables[-1]
+
+
 def is_header_table(table) -> bool:
     """Check if this table starts with the Schedule header rows.
 
-    FDUS splits the header across two rows:
+    BDCs commonly split the Schedule header across two <tr> rows:
       Row 1: Portfolio Company | Variable Index | Rate | ...
       Row 2: Investment Type   | Industry       | Spread / Floor | ...
     So we check the combined text of the first 5 rows.
@@ -61,6 +78,33 @@ def has_investment_data(table) -> bool:
         if has_date and (has_rate or has_lien):
             investment_rows += 1
     return investment_rows >= 3
+
+
+def find_schedule_groups(html: str) -> list[ScheduleGroup]:
+    """Detect Schedule of Investments table groups in a 10-K HTML document.
+
+    Returns groups in document order. Each group is a header table plus the
+    continuation tables (up to 2 positions away) that contain investment data.
+    """
+    soup = BeautifulSoup(html, "lxml")
+    all_tables = soup.find_all("table")
+
+    groups: list[ScheduleGroup] = []
+    current: ScheduleGroup | None = None
+
+    for i, table in enumerate(all_tables):
+        if is_header_table(table):
+            if current is not None:
+                groups.append(current)
+            current = ScheduleGroup(header_table=i, tables=[i])
+        elif current is not None and has_investment_data(table):
+            if i - current.tables[-1] <= 2:
+                current.tables.append(i)
+
+    if current is not None:
+        groups.append(current)
+
+    return groups
 
 
 def find_sections_in_table(table) -> list[str]:
@@ -130,45 +174,30 @@ def spot_bdc_quirks(table) -> list[str]:
 def main():
     if not CACHE_PATH.exists():
         print(f"ERROR: Cache file not found at {CACHE_PATH}")
-        print("Run fetch_filing.py first.")
+        print("Run `python -m bdc_parser.fetch` first.")
         return
 
     print(f"Loading HTML ({CACHE_PATH.stat().st_size / 1024 / 1024:.1f} MB)...")
     html = CACHE_PATH.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "lxml")
-
     all_tables = soup.find_all("table")
     print(f"Total tables in document: {len(all_tables)}\n")
 
-    schedule_groups = []
-    current_group = None
-
-    for i, table in enumerate(all_tables):
-        if is_header_table(table):
-            if current_group:
-                schedule_groups.append(current_group)
-            current_group = {"start": i, "tables": [i], "header_table": i}
-        elif current_group and has_investment_data(table):
-            if i - current_group["tables"][-1] <= 2:
-                current_group["tables"].append(i)
-
-    if current_group:
-        schedule_groups.append(current_group)
-
-    print(f"Found {len(schedule_groups)} Schedule of Investments group(s)\n")
+    groups = find_schedule_groups(html)
+    print(f"Found {len(groups)} Schedule of Investments group(s)\n")
     print("=" * 80)
 
-    for g_idx, group in enumerate(schedule_groups):
+    for g_idx, group in enumerate(groups):
         print(f"\nSCHEDULE GROUP {g_idx + 1}")
-        print(f"  Tables: #{group['tables'][0]} through #{group['tables'][-1]}")
-        print(f"  Spans {len(group['tables'])} HTML table element(s)")
+        print(f"  Tables: #{group.start} through #{group.end}")
+        print(f"  Spans {len(group.tables)} HTML table element(s)")
 
         total_rows = 0
         all_sections = []
         all_totals = []
         all_quirks = set()
 
-        for t_idx in group["tables"]:
+        for t_idx in group.tables:
             table = all_tables[t_idx]
             rows = table.find_all("tr")
             total_rows += len(rows)
@@ -192,7 +221,7 @@ def main():
             print(f"\n  BDC quirks: {', '.join(sorted(all_quirks))}")
 
         print(f"\n  Sample data rows per table:")
-        for t_idx in group["tables"]:
+        for t_idx in group.tables:
             table = all_tables[t_idx]
             row_count = len(table.find_all("tr"))
             samples = get_sample_data_rows(table, n=2)
