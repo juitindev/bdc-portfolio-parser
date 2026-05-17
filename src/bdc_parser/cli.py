@@ -5,8 +5,14 @@ import argparse
 import sys
 from urllib.parse import urlparse
 
+from dotenv import load_dotenv
+
 from bdc_parser import __version__
 from bdc_parser.profiles import load_profile, available_profiles
+
+# Load .env from cwd before anything else reads os.environ.
+# override=False so an already-set shell env var wins over .env.
+load_dotenv(override=False)
 
 
 def _add_ticker(p):
