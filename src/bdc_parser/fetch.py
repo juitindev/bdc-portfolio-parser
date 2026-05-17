@@ -1,26 +1,21 @@
-"""Fetch FDUS latest 10-K filing and cache the raw HTML.
-
-Migrated from src/fetch_filing.py — logic unchanged.
-"""
+"""Fetch a BDC 10-K filing from SEC EDGAR and cache the raw HTML."""
 from __future__ import annotations
 
 import os
-import sys
 from pathlib import Path
 
-# src/bdc_parser/fetch.py -> repo root is parents[2]
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-RAW_DIR = PROJECT_ROOT / "raw"
-CACHE_PATH = RAW_DIR / "fdus_10k_latest.html"
+from bdc_parser.models import BDCProfile
+from bdc_parser.paths import cache_path, RAW_DIR
 
-# edgartools requires a user-agent identity
-os.environ.setdefault("EDGAR_IDENTITY", "Juit Chang ruitingz987@gmail.com")
+# edgartools requires a user-agent identity. Override via EDGAR_IDENTITY env var.
+os.environ.setdefault("EDGAR_IDENTITY", "BDC Portfolio Parser parser@example.com")
 
 
-def fetch_filing():
+def fetch_filing(profile: BDCProfile):
+    """Fetch the latest 10-K filing object for the given BDC."""
     from edgar import Company
 
-    company = Company("FDUS")
+    company = Company(profile.cik or profile.ticker)
     print(f"Company: {company.name} (CIK: {company.cik})")
 
     filings_10k = company.get_filings(form="10-K")
@@ -35,31 +30,29 @@ def fetch_filing():
     return latest
 
 
-def save_html(filing) -> int:
+def save_html(filing, dest: Path) -> int:
     """Download and save the filing HTML. Returns file size in bytes."""
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
+    dest.parent.mkdir(parents=True, exist_ok=True)
     html = filing.html()
-    CACHE_PATH.write_text(html, encoding="utf-8")
-    size = CACHE_PATH.stat().st_size
-    return size
+    dest.write_text(html, encoding="utf-8")
+    return dest.stat().st_size
 
 
-def main():
-    if CACHE_PATH.exists():
-        size = CACHE_PATH.stat().st_size
-        print(f"[CACHE HIT] Using cached HTML at {CACHE_PATH}")
+def run(profile: BDCProfile, force: bool = False) -> Path:
+    """Fetch and cache the latest 10-K. Returns the cache path."""
+    dest = cache_path(profile.ticker)
+    if dest.exists() and not force:
+        size = dest.stat().st_size
+        print(f"[CACHE HIT] Using cached HTML at {dest}")
         print(f"  File size: {size:,} bytes ({size / 1024 / 1024:.1f} MB)")
-        print("\nTo re-fetch, delete the cache file and re-run.")
-        return
+        print("\nTo re-fetch, pass --force or delete the cache file.")
+        return dest
 
     print("[CACHE MISS] Fetching from EDGAR...\n")
-    filing = fetch_filing()
+    filing = fetch_filing(profile)
 
     print("\nDownloading HTML...")
-    size = save_html(filing)
-    print(f"  Saved to:   {CACHE_PATH}")
+    size = save_html(filing, dest)
+    print(f"  Saved to:   {dest}")
     print(f"  File size:  {size:,} bytes ({size / 1024 / 1024:.1f} MB)")
-
-
-if __name__ == "__main__":
-    main()
+    return dest

@@ -1,7 +1,4 @@
-"""Scrape InductiveHealth Informatics website for company overview and leadership.
-
-Migrated from src/scrape_company_website.py — logic unchanged.
-"""
+"""Polite scraper for a portfolio company website (homepage + about + product pages)."""
 from __future__ import annotations
 
 import json
@@ -14,26 +11,24 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
+from bdc_parser.paths import website_json
+
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 except AttributeError:
     pass
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-OUTPUT_PATH = PROJECT_ROOT / "data" / "inductivehealth_website.json"
-
-BASE_URL = "https://inductivehealth.com/"
-HEADERS = {
+DEFAULT_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml",
 }
-DELAY = 1.5
+DEFAULT_DELAY = 1.5
 
 
-def fetch_page(url: str) -> tuple[int, str | None]:
+def fetch_page(url: str, headers: dict) -> tuple[int, str | None]:
     """Fetch a URL, return (status_code, html_or_none)."""
     try:
-        resp = requests.get(url, headers=HEADERS, timeout=15)
+        resp = requests.get(url, headers=headers, timeout=15)
         print(f"  {resp.status_code} {url} ({len(resp.text):,} bytes)")
         if resp.status_code == 200:
             return resp.status_code, resp.text
@@ -61,7 +56,7 @@ def clean_text(soup: BeautifulSoup) -> str:
     return "\n".join(lines)
 
 
-def extract_nav_links(soup: BeautifulSoup) -> list[dict]:
+def extract_nav_links(soup: BeautifulSoup, base_url: str) -> list[dict]:
     """Extract navigation links to find product/service/about pages."""
     nav_links = []
     nav_areas = soup.find_all(["nav"]) or soup.find_all(class_=re.compile(r"menu|nav", re.I))
@@ -73,8 +68,8 @@ def extract_nav_links(soup: BeautifulSoup) -> list[dict]:
             if not text or len(text) > 60:
                 continue
             if href.startswith("/"):
-                href = BASE_URL + href
-            if href.startswith(BASE_URL):
+                href = base_url.rstrip("/") + href
+            if href.startswith(base_url):
                 nav_links.append({"text": text, "url": href})
 
     seen = set()
@@ -86,9 +81,9 @@ def extract_nav_links(soup: BeautifulSoup) -> list[dict]:
     return unique
 
 
-def classify_page_type(url: str, nav_text: str = "") -> str | None:
+def classify_page_type(url: str, base_url: str, nav_text: str = "") -> str | None:
     """Classify a nav link as a structural page type, or None to skip."""
-    path = url.lower().replace(BASE_URL.lower(), "")
+    path = url.lower().replace(base_url.lower(), "")
     combined = (path + " " + nav_text).lower()
 
     if any(kw in combined for kw in ["about", "team", "leadership", "who-we-are"]):
@@ -168,55 +163,68 @@ def extract_products(soup: BeautifulSoup) -> list[str]:
     return products
 
 
-def main():
+def run(
+    target: str,
+    base_url: str,
+    *,
+    company_name: str | None = None,
+    extra_urls: list[tuple[str, str, str]] | None = None,
+    delay: float = DEFAULT_DELAY,
+) -> Path:
+    """Scrape a portfolio company website. Returns output JSON path.
+
+    Args:
+        target: short slug used for output filename (e.g., "inductivehealth")
+        base_url: company website root (e.g., "https://inductivehealth.com/")
+        company_name: display name for the output JSON; falls back to scraped <title>
+        extra_urls: optional list of (url, page_type, nav_text) for product pages
+            that may not be discoverable via nav-link crawling
+    """
+    base_url = base_url.rstrip("/") + "/"
+    out_path = website_json(target)
     scraped_at = datetime.now(timezone.utc).isoformat()
     pages = []
     all_leaders = []
     all_products = []
-    pages_to_scrape = []
+    pages_to_scrape: list[tuple[str, str, str]] = []
 
     print("Fetching homepage...")
-    status, html = fetch_page(BASE_URL + "/")
+    status, html = fetch_page(base_url, DEFAULT_HEADERS)
     if not html:
         print("FATAL: Homepage failed to load")
-        return
+        return out_path
 
     soup = BeautifulSoup(html, "lxml")
+    home_title = soup.title.get_text(strip=True) if soup.title else ""
     home_text = clean_text(BeautifulSoup(html, "lxml"))
     pages.append({
-        "url": BASE_URL + "/",
-        "title": soup.title.get_text(strip=True) if soup.title else "",
+        "url": base_url,
+        "title": home_title,
         "type": "homepage",
         "status_code": status,
         "clean_text": home_text[:3000],
         "structured": {},
     })
 
-    nav_links = extract_nav_links(soup)
+    nav_links = extract_nav_links(soup, base_url)
     print(f"\nFound {len(nav_links)} nav links:")
     for link in nav_links:
-        page_type = classify_page_type(link["url"], link["text"])
+        page_type = classify_page_type(link["url"], base_url, link["text"])
         marker = f" → [{page_type}]" if page_type else " (skip)"
         print(f"  {link['text'][:40]:<40} {link['url'][:60]}{marker}")
         if page_type:
             pages_to_scrape.append((link["url"], page_type, link["text"]))
 
-    about_url = BASE_URL + "/about-us/"
+    about_url = base_url + "about-us/"
     if not any(u == about_url for u, _, _ in pages_to_scrape):
         pages_to_scrape.append((about_url, "about", "About Us"))
 
-    product_pages = [
-        (BASE_URL + "/inductivehealthedss/", "products", "InductiveHealth EDSS"),
-        (BASE_URL + "/epitrax/", "products", "EpiTrax"),
-        (BASE_URL + "/nbs/", "products", "NBS"),
-        (BASE_URL + "/webiz/", "products", "WebIZ"),
-        (BASE_URL + "/essence/", "products", "ESSENCE"),
-    ]
-    for url, ptype, text in product_pages:
-        if not any(u == url for u, _, _ in pages_to_scrape):
-            pages_to_scrape.append((url, ptype, text))
+    if extra_urls:
+        for url, ptype, text in extra_urls:
+            if not any(u == url for u, _, _ in pages_to_scrape):
+                pages_to_scrape.append((url, ptype, text))
 
-    seen_urls = {BASE_URL + "/"}
+    seen_urls = {base_url}
     unique_pages = []
     for url, ptype, nav_text in pages_to_scrape:
         norm = url.rstrip("/") + "/"
@@ -227,8 +235,8 @@ def main():
     print(f"\nScraping {len(unique_pages)} structural pages...")
 
     for url, ptype, nav_text in unique_pages:
-        time.sleep(DELAY)
-        status, html = fetch_page(url)
+        time.sleep(delay)
+        status, html = fetch_page(url, DEFAULT_HEADERS)
         if not html:
             pages.append({
                 "url": url,
@@ -277,9 +285,11 @@ def main():
             seen_names.add(l["name"])
             unique_leaders.append(l)
 
+    resolved_name = company_name or home_title or target
+
     output = {
-        "company_name": "InductiveHealth Informatics",
-        "website": BASE_URL,
+        "company_name": resolved_name,
+        "website": base_url,
         "scraped_at": scraped_at,
         "pages": pages,
         "leadership": unique_leaders,
@@ -290,12 +300,12 @@ def main():
         },
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
     print(f"\n{'='*80}")
-    print(f"Saved to {OUTPUT_PATH}")
+    print(f"Saved to {out_path}")
     print(f"{'='*80}")
 
     print(f"\nPAGES SCRAPED ({len(pages)}):")
@@ -318,6 +328,4 @@ def main():
     for p in dict.fromkeys(all_products):
         print(f"  - {p}")
 
-
-if __name__ == "__main__":
-    main()
+    return out_path

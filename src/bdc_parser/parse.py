@@ -21,16 +21,13 @@ from __future__ import annotations
 import re
 import csv
 import warnings
-from pathlib import Path
 from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
 from bdc_parser.locate import find_schedule_groups
+from bdc_parser.models import BDCProfile
+from bdc_parser.paths import cache_path, schedule_csv
 
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-CACHE_PATH = PROJECT_ROOT / "raw" / "fdus_10k_latest.html"
-OUTPUT_PATH = PROJECT_ROOT / "data" / "fdus_schedule_full.csv"
 
 SECTION_LABELS = [
     ("non-control/non-affiliate investments", "Non-control/Non-affiliate"),
@@ -190,13 +187,17 @@ def extract_investment_fields(cells_text: list[str]) -> dict:
     return fields
 
 
-def main():
-    if not CACHE_PATH.exists():
-        print("ERROR: Run fetch_filing.py first.")
-        return
+def run(profile: BDCProfile):
+    """Parse the Schedule of Investments to CSV. Returns the output CSV path."""
+    html_path = cache_path(profile.ticker)
+    out_path = schedule_csv(profile.ticker)
+
+    if not html_path.exists():
+        print(f"ERROR: Run `bdc-parse fetch {profile.ticker}` first.")
+        return None
 
     print(f"Loading HTML...")
-    html = CACHE_PATH.read_text(encoding="utf-8")
+    html = html_path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "lxml")
     all_tables = soup.find_all("table")
 
@@ -259,19 +260,19 @@ def main():
                 if len(non_empty) >= 2:
                     unknown_rows.append(non_empty[:5])
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = [
         "company_name", "industry", "investment_category", "investment_type",
         "rate_spread_floor", "rate_cash_pik", "investment_date", "maturity_date",
         "principal_amount", "cost", "fair_value",
     ]
-    with open(OUTPUT_PATH, "w", newline="", encoding="utf-8") as f:
+    with open(out_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows_out)
 
     print(f"\nParsed {len(rows_out)} investment rows")
-    print(f"Saved to {OUTPUT_PATH}\n")
+    print(f"Saved to {out_path}\n")
 
     total_fv = 0
     missing_fv = 0
@@ -316,6 +317,4 @@ def main():
         for u in unknown_rows[:10]:
             print(f"  {u}")
 
-
-if __name__ == "__main__":
-    main()
+    return out_path

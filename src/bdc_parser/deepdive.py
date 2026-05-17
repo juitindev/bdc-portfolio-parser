@@ -1,7 +1,4 @@
-"""Extract all filing data for InductiveHealth Informatics from the Schedule CSV + raw 10-K HTML.
-
-Migrated from src/extract_company_filing_data.py — logic unchanged.
-"""
+"""Extract all filing data for one portfolio company from the Schedule CSV + raw 10-K HTML."""
 from __future__ import annotations
 
 import csv
@@ -11,23 +8,20 @@ import warnings
 from pathlib import Path
 from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
+from bdc_parser.models import BDCProfile
+from bdc_parser.paths import cache_path, schedule_csv, deepdive_json
+
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-CSV_PATH = PROJECT_ROOT / "data" / "fdus_schedule_full.csv"
-HTML_PATH = PROJECT_ROOT / "raw" / "fdus_10k_latest.html"
-OUTPUT_PATH = PROJECT_ROOT / "data" / "inductivehealth_filing_data.json"
 
-TARGET = "inductivehealth"
-
-
-def find_schedule_rows() -> list[dict]:
-    """Filter CSV rows matching the target company."""
-    with open(CSV_PATH, encoding="utf-8") as f:
+def find_schedule_rows(csv_path: Path, target: str) -> list[dict]:
+    """Filter CSV rows whose company_name contains the target substring (case-insensitive)."""
+    with open(csv_path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
 
-    matches = [r for r in rows if TARGET in r["company_name"].lower()]
-    print(f"Found {len(matches)} schedule rows for target")
+    target_lc = target.lower()
+    matches = [r for r in rows if target_lc in r["company_name"].lower()]
+    print(f"Found {len(matches)} schedule rows for target '{target}'")
 
     cleaned = []
     for r in matches:
@@ -35,20 +29,20 @@ def find_schedule_rows() -> list[dict]:
     return cleaned
 
 
-def find_other_mentions(schedule_company_name: str) -> list[dict]:
-    """Search the full 10-K HTML for mentions of InductiveHealth outside the Schedule tables.
+def find_other_mentions(html_path: Path, target: str) -> list[dict]:
+    """Search the full 10-K HTML for mentions of the target outside the Schedule tables.
 
     Returns context snippets with ±200 chars around each match.
     """
-    html = HTML_PATH.read_text(encoding="utf-8")
+    html = html_path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "lxml")
 
     full_text = soup.get_text(separator=" ")
     full_text = re.sub(r"\s+", " ", full_text)
 
-    pattern = re.compile(r"InductiveHealth", re.IGNORECASE)
+    pattern = re.compile(re.escape(target), re.IGNORECASE)
     matches = list(pattern.finditer(full_text))
-    print(f"Total mentions of 'InductiveHealth' in full text: {len(matches)}")
+    print(f"Total mentions of '{target}' in full text: {len(matches)}")
 
     snippets = []
     seen_contexts = set()
@@ -97,11 +91,16 @@ def find_other_mentions(schedule_company_name: str) -> list[dict]:
     return non_schedule
 
 
-def main():
-    schedule_rows = find_schedule_rows()
+def run(profile: BDCProfile, target: str) -> Path | None:
+    """Extract deep-dive filing data for one portfolio company. Returns output path."""
+    csv_path = schedule_csv(profile.ticker)
+    html_path = cache_path(profile.ticker)
+    out_path = deepdive_json(target)
+
+    schedule_rows = find_schedule_rows(csv_path, target)
     if not schedule_rows:
-        print("ERROR: No rows found for target company")
-        return
+        print(f"ERROR: No rows in {csv_path.name} match target '{target}'")
+        return None
 
     company_name = schedule_rows[0]["company_name"]
     category = schedule_rows[0]["investment_category"]
@@ -119,7 +118,7 @@ def main():
     }
 
     print()
-    other_mentions = find_other_mentions(company_name)
+    other_mentions = find_other_mentions(html_path, target)
 
     output = {
         "company_name": company_name,
@@ -128,11 +127,11 @@ def main():
         "other_filing_mentions": other_mentions,
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"\nSaved to {OUTPUT_PATH}\n")
+    print(f"\nSaved to {out_path}\n")
     print("=" * 80)
     print(f"COMPANY: {company_name}")
     print(f"CATEGORY: {category}")
@@ -158,16 +157,12 @@ def main():
 
     if other_mentions:
         print(f"\nOTHER FILING MENTIONS ({len(other_mentions)}):")
+        marker_re = re.compile(re.escape(target), re.IGNORECASE)
         for i, m in enumerate(other_mentions, 1):
             print(f"\n  [{i}] Section: {m['likely_section']}")
-            snippet = m["snippet"]
-            snippet = re.sub(
-                r"(InductiveHealth)", r">>> \1 <<<", snippet, flags=re.IGNORECASE
-            )
+            snippet = marker_re.sub(lambda mm: f">>> {mm.group(0)} <<<", m["snippet"])
             print(f"      ...{snippet}...")
     else:
         print(f"\nNo additional mentions found outside the Schedule of Investments.")
 
-
-if __name__ == "__main__":
-    main()
+    return out_path

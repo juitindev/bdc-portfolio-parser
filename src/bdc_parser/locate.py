@@ -13,13 +13,12 @@ from __future__ import annotations
 import re
 import warnings
 from dataclasses import dataclass, field
-from pathlib import Path
 from bs4 import BeautifulSoup, XMLParsedAsHTMLWarning
 
-warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+from bdc_parser.models import BDCProfile
+from bdc_parser.paths import cache_path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-CACHE_PATH = PROJECT_ROOT / "raw" / "fdus_10k_latest.html"
+warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
 SECTION_MARKERS = [
     "Control Investments",
@@ -171,14 +170,16 @@ def spot_bdc_quirks(table) -> list[str]:
     return quirks
 
 
-def main():
-    if not CACHE_PATH.exists():
-        print(f"ERROR: Cache file not found at {CACHE_PATH}")
-        print("Run `python -m bdc_parser.fetch` first.")
+def run(profile: BDCProfile):
+    """Locate Schedule of Investments tables and print a diagnostic summary."""
+    path = cache_path(profile.ticker)
+    if not path.exists():
+        print(f"ERROR: Cache file not found at {path}")
+        print(f"Run `bdc-parse fetch {profile.ticker}` first.")
         return
 
-    print(f"Loading HTML ({CACHE_PATH.stat().st_size / 1024 / 1024:.1f} MB)...")
-    html = CACHE_PATH.read_text(encoding="utf-8")
+    print(f"Loading HTML ({path.stat().st_size / 1024 / 1024:.1f} MB)...")
+    html = path.read_text(encoding="utf-8")
     soup = BeautifulSoup(html, "lxml")
     all_tables = soup.find_all("table")
     print(f"Total tables in document: {len(all_tables)}\n")
@@ -232,7 +233,3 @@ def main():
                 print(f"      {s}")
 
         print("\n" + "=" * 80)
-
-
-if __name__ == "__main__":
-    main()
