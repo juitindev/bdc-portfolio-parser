@@ -194,10 +194,12 @@ Patterns to keep using:
 ## Pytest / Lint / Commit Conventions
 
 - **Pytest** is configured (see `pyproject.toml [tool.pytest.ini_options]`).
-  Tests live in `tests/`, mirror `src/bdc_parser/` filenames. 46 offline
-  tests, sub-second. One opt-in live test is marked `@pytest.mark.llm` and
-  skipped unless an API key is set. Add validator and qa/ tests in the same
-  pattern — offline by default.
+  Tests live in `tests/`, mirror `src/bdc_parser/` filenames. 85 offline
+  tests, sub-second. Every test runs offline — no live LLM is ever invoked:
+  the qa/ tests inject retrieval results and monkeypatch `get_model`, and the
+  rate-parser/qa tests delete provider API keys so nothing reaches a real
+  provider. Add validator and qa/ tests in the same pattern — offline by
+  default.
 - **Lint/format**: not configured. If introducing tools, prefer `ruff` over
   `black`+`flake8` to keep tooling minimal.
 - **Commits**: short subject under ~70 chars. Recent commits use
