@@ -27,6 +27,7 @@ from bdc_parser.ai.rate_parser import parse_rate
 from bdc_parser.locate import find_schedule_groups
 from bdc_parser.models import BDCProfile
 from bdc_parser.paths import cache_path, schedule_csv
+from bdc_parser.validate import validate, print_report
 
 warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
 
@@ -188,13 +189,19 @@ def extract_investment_fields(cells_text: list[str]) -> dict:
     return fields
 
 
-def run(profile: BDCProfile, *, use_llm: bool = True):
+def run(profile: BDCProfile, *, use_llm: bool = True,
+        allow_validation_failure: bool = False):
     """Parse the Schedule of Investments to CSV. Returns the output CSV path.
 
     Rate strings are parsed into structured RateTerms columns. Regex runs
     first; the LLM is only invoked when regex output is incomplete AND
     `use_llm=True` AND langchain + an API key are present. Otherwise the
     regex result stands.
+
+    After the CSV is written, a profile-independent validator runs to catch
+    silent attribution corruption. If validation fails and
+    `allow_validation_failure=False`, returns None so the CLI exits non-zero.
+    The CSV is written regardless so the caller can inspect it.
     """
     html_path = cache_path(profile.ticker)
     out_path = schedule_csv(profile.ticker)
@@ -341,5 +348,11 @@ def run(profile: BDCProfile, *, use_llm: bool = True):
         print(f"\n{len(unknown_rows)} UNKNOWN rows (may need investigation):")
         for u in unknown_rows[:10]:
             print(f"  {u}")
+
+    print()
+    report = validate(rows_out, unknown_rows=unknown_rows)
+    print_report(report)
+    if not report.ok and not allow_validation_failure:
+        return None
 
     return out_path

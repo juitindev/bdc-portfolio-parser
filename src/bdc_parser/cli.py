@@ -48,7 +48,11 @@ def cmd_locate(args) -> int:
 def cmd_schedule(args) -> int:
     from bdc_parser.parse import run
     profile = load_profile(args.ticker)
-    out = run(profile, use_llm=not args.no_llm)
+    out = run(
+        profile,
+        use_llm=not args.no_llm,
+        allow_validation_failure=args.allow_validation_failure,
+    )
     return 0 if out else 1
 
 
@@ -96,6 +100,43 @@ def cmd_execs(args) -> int:
     return 0
 
 
+def cmd_ask(args) -> int:
+    # TODO(v0-router): the next slice is qa/router.py — classify the question
+    # as sql | rag | hybrid and dispatch accordingly (SQL over DuckDB, RAG via
+    # this path, or a hybrid composition). For today `ask` goes STRAIGHT to the
+    # RAG path; there is no router/SQL/hybrid branch yet.
+    from bdc_parser.qa.answer import answer
+
+    ticker = args.ticker
+    try:
+        result = answer(args.question, ticker=ticker, k=args.k,
+                        use_llm=not args.no_llm)
+    except RuntimeError as e:
+        print(f"ERROR: {e}")
+        return 1
+    except FileNotFoundError as e:
+        print(f"ERROR: {e}")
+        return 1
+
+    # Verbose chunk citations are shown BY DEFAULT — the router/RAG decision
+    # being visible is a documented feature (CLAUDE.md), not debug noise.
+    verbose = not args.quiet
+    if verbose:
+        print(f"[route: rag]  ticker={ticker.upper()}  retrieved={len(result.chunks)} chunk(s)")
+        if result.refused:
+            print("[route: rag]  retrieval empty -> REFUSING (no grounded source)")
+        for i, c in enumerate(result.chunks, 1):
+            preview = c.text.strip().replace("\n", " ")
+            if len(preview) > 100:
+                preview = preview[:100] + "…"
+            print(f"  [{i}] score={c.score:.3f}  {c.ref.cite()}")
+            print(f"       {preview}")
+        print("-" * 80)
+
+    print(result.text)
+    return 0 if not result.refused else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="bdc-parse", description="BDC 10-K parser")
     p.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
@@ -114,6 +155,9 @@ def main(argv: list[str] | None = None) -> int:
     _add_ticker(sp)
     sp.add_argument("--no-llm", action="store_true",
                     help="disable LLM rate-parsing fallback (regex-only)")
+    sp.add_argument("--allow-validation-failure", action="store_true",
+                    help="exit 0 even if post-parse validation fails "
+                         "(CSV is written either way)")
 
     sp = sub.add_parser("rank", help="rank portfolio companies by fair value")
     _add_ticker(sp)
@@ -136,6 +180,17 @@ def main(argv: list[str] | None = None) -> int:
     sp.add_argument("--target", required=True, help="output slug (same as `website`)")
     sp.add_argument("--top", type=int, default=3)
 
+    sp = sub.add_parser("ask", help="ask a natural-language question (RAG over the 10-K)")
+    sp.add_argument("question", help="the question to answer from the filing")
+    sp.add_argument("--ticker", default="FDUS",
+                    help="BDC ticker to query (v0: FDUS only)")
+    sp.add_argument("--k", type=int, default=10,
+                    help="number of chunks to retrieve")
+    sp.add_argument("--no-llm", action="store_true",
+                    help="skip the LLM; return the top grounded passage + citations")
+    sp.add_argument("--quiet", action="store_true",
+                    help="hide retrieved-chunk citations (verbose is the default demo mode)")
+
     args = p.parse_args(argv)
 
     dispatch = {
@@ -147,6 +202,7 @@ def main(argv: list[str] | None = None) -> int:
         "deepdive": cmd_deepdive,
         "website": cmd_website,
         "execs": cmd_execs,
+        "ask": cmd_ask,
     }
     return dispatch[args.cmd](args)
 

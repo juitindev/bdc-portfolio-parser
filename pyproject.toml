@@ -24,6 +24,7 @@ dependencies = [
 ai = ["langchain>=1.0"]
 anthropic = ["langchain>=1.0", "langchain-anthropic>=0.3"]
 openai = ["langchain>=1.0", "langchain-openai>=0.3"]
+qa = ["qdrant-client>=1.7", "sentence-transformers>=2.3"]
 dev = ["pytest>=8.0", "pytest-mock>=3.12"]
 
 [project.scripts]
