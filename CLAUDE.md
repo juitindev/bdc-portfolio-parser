@@ -64,8 +64,8 @@ bdc-portfolio-parser/
 | Ticker | Status | Notes |
 |---|---|---|
 | FDUS | shipped | FY2025, 241 rows, sanity-checked against audited Total Investments |
-| MAIN | v0 in progress | reports in actual dollars (not $K); see units handling |
-| GAIN | v0 in progress | FDUS-style schedule, expected smooth path |
+| MAIN | _(planned, not yet implemented)_ | reports in actual dollars (not $K); see units handling |
+| GAIN | _(planned, not yet implemented)_ | FDUS-style schedule, expected smooth path |
 | ARCC | **deferred to v1** | numbered footnotes + bare-spread rate format + larger schedule; full complexity analysis in `ROADMAP.md` §1 |
 
 When adding a new ticker: write the YAML profile, run `bdc-parse locate <T>`
@@ -90,16 +90,22 @@ v1, with a one-line reason. Do not paper over with a partial answer.
 
 ## Architecture — Hybrid SQL+RAG (v0)
 
+**STATUS: Only the RAG retrieval + cited-answer path is implemented
+(`qa/retrieve.py`, `qa/answer.py`). SQL router, hybrid composition, and the
+eval harness are designed but NOT yet built.** The diagram below is the
+target architecture; lines marked _(planned, not yet implemented)_ do not
+exist as code today.
+
 ```
    user question
         │
         ▼
-   qa/router.py ──── classifies as: sql | rag | hybrid
+   qa/router.py ──── classifies as: sql | rag | hybrid   (planned, not yet implemented)
         │
    ┌────┴────┐
    ▼         ▼
 qa/sql_   qa/retrieve.py
-tools.py     │
+tools.py     │       (qa/sql_tools.py: planned, not yet implemented)
    │         ▼   (Qdrant + BGE-base, indexed from raw/ HTML
    │         │    excluding Schedule of Investments tables)
    ▼         ▼
@@ -109,22 +115,24 @@ tools.py     │
       CLI output (router decision shown by default)
 ```
 
-- **SQL side** runs DuckDB queries directly over `data/*_schedule_full.csv` and
-  `data/*_top10_by_fair_value.csv`. No Postgres in v0. Templated queries
-  exposed as tool calls (top-N, sum-by-category, count-by-type, filter-by-industry).
+- **SQL side** _(planned, not yet implemented)_ runs DuckDB queries directly
+  over `data/*_schedule_full.csv` and `data/*_top10_by_fair_value.csv`. No
+  Postgres in v0. Templated queries exposed as tool calls (top-N,
+  sum-by-category, count-by-type, filter-by-industry).
 - **RAG side** uses sentence-transformers `BAAI/bge-base-en-v1.5` (768-dim) into
   Qdrant. Section-aware chunking by 10-K Item header, then ~512 tokens with
   ~64 overlap on paragraph boundaries. Schedule of Investments tables are
   **excluded** from the corpus — they're already structured in CSV.
-- **Hybrid** composes SQL results into the prompt alongside retrieved chunks.
-  Justified only when the answer requires both — see eval rubric for the
-  hybrid demo query.
+- **Hybrid** _(planned, not yet implemented)_ composes SQL results into the
+  prompt alongside retrieved chunks. Justified only when the answer requires
+  both — see eval rubric for the hybrid demo query (the `eval/` harness is
+  itself planned, not yet implemented).
 
-**Verbose router output is a feature, not debug noise — do not suppress.**
-`bdc-parse ask` shows the router's decision and chunk citations by default.
-`--quiet` hides them; `--verbose` is the documented demo mode. Every README
-example uses the verbose form on purpose: reviewers see the architecture
-working.
+**Route + citation output is a feature, not debug noise — do not suppress.**
+`bdc-parse ask` shows the route decision (`[route: rag]`) and chunk citations
+**by default**. `--quiet` suppresses them. There is no `--verbose` flag — the
+verbose form IS the default, on purpose: reviewers see the architecture
+working without passing any flag.
 
 ## Evaluation Principles
 

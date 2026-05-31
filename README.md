@@ -7,9 +7,31 @@ Parse SEC EDGAR Business Development Company (BDC) 10-K filings into structured 
 - **Regex-first rate parsing.** Structured `RateTerms` (reference, spread, floor, cash, PIK) are extracted by pattern matching. The package works with no API key. An LLM is invoked only as a fallback when the regex result is incomplete and a provider key is present.
 - **Provider-agnostic.** Anthropic, OpenAI, Google — switch with one env var.
 - **One BDC per profile.** Adding a new BDC is a YAML file with ticker, name, and CIK. Parsing is generic; the section labels (Control / Affiliate / Non-control) come from the Investment Company Act and apply to every BDC.
-- **Tested.** 46 offline unit tests, sub-second runtime.
+- **Tested.** 85 offline unit tests, sub-second runtime.
 
 A worked example using Fidus Investment Corp's FY2025 10-K is included in `data/` — 241 investment rows, 103 portfolio companies, $1,324,753K total fair value, reconciled to the audited Total Investments line.
+
+## Attribution-grounded RAG (FDUS)
+
+`bdc-parse ask "<question>" --ticker FDUS` answers natural-language questions over the 10-K narrative — Item 1 Business, MD&A, risk factors. The Schedule of Investments tables are excluded from the corpus; they're already structured in `data/fdus_schedule_full.csv`. Retrieval uses Qdrant + `BAAI/bge-base-en-v1.5` embeddings with section-aware chunking by 10-K Item header, and XBRL / boilerplate front-matter is filtered out. Every claim in the answer carries an inline citation to a source locator (`[FDUS 10-K | Item N | chars …]`); if retrieval finds nothing relevant, the layer refuses rather than hallucinating. Only the RAG path is built today — there is no SQL routing, hybrid composition, or multi-BDC QA yet.
+
+```bash
+bdc-parse ask "What is FDUS's investment strategy?" --ticker FDUS
+```
+
+```
+[route: rag]  ticker=FDUS  retrieved=10 chunk(s)
+  [1] score=0.667  [FDUS 10-K | Item 1 (Business) | chars 330077-333770]
+  ...
+FDUS provides customized debt and equity financing to lower middle-market
+companies with revenues of $10.0M–$150.0M [2][3], primarily through unitranche
+or first-lien senior secured loans coupled with an equity interest [1].
+
+Sources:
+[1] [FDUS 10-K | Item 1 (Business) | chars 330077-333770]
+[2] [FDUS 10-K | Item 7 (Management's Discussion and Analysis ...) | chars 625182-629692]
+[3] [FDUS 10-K | Item 1 (Business) | chars 319520-322970]
+```
 
 ## Install
 
